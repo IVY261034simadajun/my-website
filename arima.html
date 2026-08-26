@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>有馬記念</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="subHeader">
+    <h1>🏇 日本競馬 GⅠレース紹介</h1>
+</header>
+
+<div class="card">
+
+    <h2>🌟 有馬記念（GⅠ）</h2>
+
+    <img src="img/ゼンノロブロイ.jpg" class="detailImage" alt="有馬記念">
+
+    <h3>レース概要</h3>
+
+    <p>
+        有馬記念は毎年12月に中山競馬場で開催される、JRAを代表するグランプリレースです。
+        国内外で活躍した名馬たちが一年の締めくくりとして激突します。
+        年末の風物詩として高い人気を誇り、多くの競馬ファンが注目する日本競馬最高峰のレースの一つです。
+    </p>
+
+    <h3>特徴</h3>
+
+    <ul>
+        <li>🏇 開催競馬場：中山競馬場</li>
+        <li>📏 距離：芝2500m</li>
+        <li>📅 開催時期：12月下旬</li>
+        <li>💰 1着賞金：約5億円</li>
+        <li>🗳️ ファン投票で出走馬が選出されるグランプリレース</li>
+        <li>⭐ 一年を締めくくる日本競馬屈指の人気GⅠレース</li>
+    </ul>
+
+    <button class="recordBtn" onclick="toggleRecord('record6', this)">
+    レコードを見る
+    </button>
+
+    <div class="record" id="record6">
+        <div class="recordBox">
+            <div class="recordText">
+                <p><strong>⏱ レコードタイム</strong><br>2分29秒5</p>
+                <p><strong>🐎 記録した馬</strong><br>ゼンノロブロイ</p>
+                <p><strong>🏇 騎手</strong><br>Ｏ.ペリエ</p>
+                <p><strong>📅 達成年</strong><br>2004年</p>
+            </div>
+            <div class="recordImage">
+                <iframe
+                    src="https://www.youtube.com/embed/xOiXcCdcFXk"
+                    title="有馬記念 レコード動画"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="index.html#Guranpuri-races" class="backBtn">
+    ← グランプリレース紹介へ戻る
+</a>
+
+<button id="pageTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">▲</button>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

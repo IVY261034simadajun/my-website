@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>日本ダービー（東京優駿）</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="subHeader">
+    <h1>🏇 日本競馬 GⅠレース紹介</h1>
+</header>
+
+<div class="card">
+
+    <h2>🏆 日本ダービー（東京優駿）</h2>
+
+    <img src="img/ドウデゥース.jpg" class="detailImage" alt="日本ダービー">
+
+    <h3>レース概要</h3>
+
+    <p>
+        日本ダービー（東京優駿）は日本クラシック三冠競走の第2戦であり、
+        「最も運のある馬が勝つ」と言われる3歳限定GⅠレースです。
+        競馬関係者すべてが目標とする日本競馬最高峰のレースの一つで、
+        ダービー馬の称号は競走馬にとって最高の栄誉とされています。
+    </p>
+
+    <h3>特徴</h3>
+
+    <ul>
+        <li>🏇 開催競馬場：東京競馬場</li>
+        <li>📏 距離：芝2400m</li>
+        <li>📅 開催時期：5月下旬</li>
+        <li>💰 1着賞金：約3億円</li>
+        <li>👑 クラシック三冠 第2戦</li>
+        <li>⭐ 「最も運のある馬が勝つ」と言われるレース</li>
+    </ul>
+
+    <button class="recordBtn" onclick="toggleRecord('record2', this)">
+    レコードを見る
+    </button>
+
+    <div class="record" id="record2">
+        <div class="recordBox">
+            <div class="recordText">
+                <p><strong>⏱ レコードタイム</strong><br>2分21秒9</p>
+                <p><strong>🐎 記録した馬</strong><br>ドウデュース</p>
+                <p><strong>🏇 騎手</strong><br>武 豊</p>
+                <p><strong>📅 達成年</strong><br>2022年</p>
+            </div>
+            <div class="recordImage">
+                <iframe
+                    src="https://www.youtube.com/embed/KbWXWvJM_4k"
+                    title="日本ダービー レコード動画"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="index.html#classic-races" class="backBtn">
+    ← クラシック三冠レース紹介へ戻る
+</a>
+
+<button id="pageTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">▲</button>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

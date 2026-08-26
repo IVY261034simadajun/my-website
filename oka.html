@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>桜花賞</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="subHeader">
+    <h1>🏇 日本競馬 GⅠレース紹介</h1>
+</header>
+
+<div class="card">
+
+    <h2>🌸 桜花賞（GⅠ）</h2>
+
+    <img src="img/ソダシ.jpg" class="detailImage" alt="桜花賞">
+
+    <h3>レース概要</h3>
+
+    <p>
+        桜花賞は3歳牝馬によって争われるGⅠレースであり、
+        牝馬三冠競走の第1戦です。
+        3歳牝馬にとって春の大舞台となる重要なレースで、
+        スピードと瞬発力が求められます。
+    </p>
+
+    <h3>特徴</h3>
+
+    <ul>
+        <li>🏇 開催競馬場：阪神競馬場</li>
+        <li>📏 距離：芝1600m</li>
+        <li>📅 開催時期：4月上旬</li>
+        <li>💰 1着賞金：約1億4000万円</li>
+        <li>👑 牝馬三冠 第1戦</li>
+        <li>⭐ 3歳牝馬の春の頂点を決める重要なレース</li>
+    </ul>
+
+    <button class="recordBtn" onclick="toggleRecord('record1', this)">
+        レコードを見る
+    </button>
+
+    <div class="record" id="record1">
+        <div class="recordBox">
+            <div class="recordText">
+                <p><strong>⏱ レコードタイム</strong><br>1分31秒1</p>
+                <p><strong>🐎 記録した馬</strong><br>ソダシ</p>
+                <p><strong>🏇 騎手</strong><br>吉田隼人</p>
+                <p><strong>📅 達成年</strong><br>2021年</p>
+            </div>
+            <div class="recordImage">
+                <iframe
+                    src="https://www.youtube.com/embed/5YI4MEzWKXg"
+                    title="桜花賞 レコード動画"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="index.html#female-triple-races" class="backBtn">
+    ← 牝馬三冠レース紹介へ戻る
+</a>
+
+<button id="pageTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">▲</button>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本競馬 GⅠレース紹介</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==========================================
+     ヘッダー領域（ヒーロー画像・メインビジュアル）
+     ========================================== -->
+<header class="hero">
+
+    <!-- 背景画像が切り替わるスライダー部分 -->
+    <div class="heroSlider">
+        <div class="slide" style="background-image: url('img/hero1.jpg');"></div>
+        <div class="slide" style="background-image: url('img/hero2.jpg');"></div>
+        <div class="slide" style="background-image: url('img/hero3.jpg');"></div>
+        <div class="slide" style="background-image: url('img/hero4.jpg');"></div>
+        <div class="slide" style="background-image: url('img/hero1.jpg');"></div>
+    </div>
+
+    <!-- 画像を暗くして文字を見やすくするオーバーレイ -->
+    <div class="heroOverlay"></div>
+
+    <!-- スライダーの「前へ」「次へ」ボタン -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+
+    <!-- スライダーの現在位置を示すドットナビゲーション -->
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <!-- メインタイトル・キャッチコピー -->
+    <div class="heroText">
+        <h1>日本競馬 GⅠレース紹介</h1>
+        <p>～名馬たちが駆け抜けた最高峰の舞台～</p>
+    </div>
+
+</header>
+
+<!-- ==========================================
+     ナビゲーションバー（ページ内リンク）
+     ========================================== -->
+<nav>
+    <ul>
+        <li><a href="#g1">GⅠとは</a></li>
+        <li><a href="#classic">クラシック三冠</a></li>
+        <li><a href="#tripleCrown">牝馬三冠</a></li>
+        <li><a href="#tenno">天皇賞</a></li>
+        <li><a href="#Guranpuri">グランプリ</a></li>
+    </ul>
+</nav>
+
+<!-- ==========================================
+     メインコンテンツ領域
+     ========================================== -->
+<main>
+
+<!-- セクション1: GⅠレースの概要 -->
+<section class="intro" id="g1">
+    <div class="introText">
+        <h2>GⅠレースとは？</h2>
+        <p>GⅠとは日本中央競馬（JRA）が定める最も格式の高い重賞競走です。国内外のトップホースが集まり、
+            競馬界最高峰のレースとして位置付けられています。日本では毎年26レースが開催されています。</p>
+    </div>
+    <div class="introImage">
+        <img src="img/gure-do.jpg" alt="GⅠピラミッド">
+    </div>
+</section>
+
+<!-- セクション2: 競馬の基礎知識（馬場・距離カテゴリー） -->
+<section class="knowledgeSection scrollReveal">
+    <div class="sectionTitleContainer">
+        <h2>💡 競馬の基礎知識：レースによる違い</h2>
+        <p>GⅠレースは、馬の適性（得意分野）に合わせて様々な舞台が用意されています。</p>
+    </div>
+
+    <div class="knowledgeGrid">
+        
+        <!-- 馬場状態（芝とダート）の比較テーブル -->
+        <div class="knowledgeCard">
+            <h3>🌱 芝（ターフ）と ⏳ ダート（砂）</h3>
+            <p class="knowledgeIntro">日本の競馬場には、大きく分けて2種類の「地面（馬場状態）」があります。</p>
+            <table class="knowledgeTable">
+                <tr>
+                    <th>特徴</th>
+                    <td><strong>芝（グリーン）</strong></td>
+                    <td><strong>ダート（砂）</strong></td>
+                </tr>
+                <tr>
+                    <th>求められる能力</th>
+                    <td>最高速度（スピード）、瞬発力</td>
+                    <td>パワー、スタミナ、力強さ</td>
+                </tr>
+                <tr>
+                    <th>主なレース</th>
+                    <td>皐月賞、日本ダービー、ジャパンC など</td>
+                    <td>フェブラリーS、チャンピオンズC など</td>
+                </tr>
+            </table>
+            <p class="knowledgeDesc">
+                芝レースは華やかでスピード決着が多く、日本の主流です。一方、ダートは砂埃を
+                巻き上げて走るパワフルなレース展開が魅力で、天候による影響を受けにくいタフさが求められます。
+            </p>
+        </div>
+
+        <!-- 距離カテゴリーの解説リスト -->
+        <div class="knowledgeCard">
+            <h3>📏 距離による4つのカテゴリー</h3>
+            <p class="knowledgeIntro">走る長さによって、出場する馬のタイプやレース展開がガラリと変わります。</p>
+            
+            <ul class="distanceList">
+                <li>
+                    <strong>🏃 スプリント（1000m～1400m未満）</strong>
+                    <span>一瞬の油断も許されない超高速バトルで、スタートダッシュと純粋なスピードが命です。</span>
+                </li>
+                <li>
+                    <strong>🔥 マイル（1400m～1800m未満）</strong>
+                    <span>スピードと持久力の完璧なバランスが必要で、「近代競馬の根幹」と呼ばれる激戦区です。</span>
+                </li>
+                <li>
+                    <strong>👑 中距離（1800m〜2200m未満）</strong>
+                    <span>スタミナと瞬発力の両立が求められ、世界的に最もスタンダードな距離です。</span>
+                </li>
+                <li>
+                    <strong>🏇 中長距離（2200m～2800m未満）</strong>
+                    <span>スピード、スタミナ、瞬発力などの総合力が求められ、競走馬としての真価が最も問われる距離です。</span>
+                </li>
+                <li>
+                    <strong>💪 長距離（2800m以上）</strong>
+                    <span>長距離になったことで、騎手の駆け引きや、馬のスタミナ・忍耐力が試されるスタミナ勝負です。</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- セクション3: クラシック三冠の概要 -->
+<section class="intro classicIntro" id="classic">
+    <div class="introText">
+        <h2>クラシック三冠</h2>
+        <p>
+            クラシック三冠とは、3歳馬限定で行われる
+            皐月賞、日本ダービー、菊花賞の3つのGⅠ競走を
+            すべて制覇することを指します。
+            3つのレースをすべて勝つことは非常に難しく、
+            達成した馬は日本競馬を代表する名馬として知られています。
+        </p>
+    </div>
+</section>
+
+<!-- セクション4: 代表的なクラシック三冠馬の紹介 -->
+<section class="tripleCrownHorses">
+    <h3>🏇 クラシック三冠馬</h3>
+    <p class="horseIntro">
+        これまでにクラシック三冠を達成した8頭の中から、
+        ここでは3頭を紹介します。
+    </p>
+
+    <div class="horseGrid">
+        <!-- 三冠馬1: シンボリルドルフ -->
+        <div class="horseCard scrollReveal">
+            <img src="img/シンボリルドルフ.jpg" alt="シンボリルドルフ">
+            <div class="horseCardText">
+                <h4>シンボリルドルフ</h4>
+                <span>1984年</span>
+                <p>
+                    史上初の無敗クラシック三冠やGⅠ競走7勝を達成した名馬です。
+                    その競走成績・馬名から「皇帝」と称され、
+                    引退後は種牡馬としてトウカイテイオーなどを輩出しました。
+                </p>
+            </div>
+        </div>
+
+        <!-- 三冠馬2: ディープインパクト -->
+        <div class="horseCard scrollReveal">
+            <img src="img/ディープインパクト.jpg" alt="ディープインパクト">
+            <div class="horseCardText">
+                <h4>ディープインパクト</h4>
+                <span>2005年</span>
+                <p>
+                    日本競馬史上2頭目となる、無敗クラシック三冠を達成しました。
+                    現役時代は圧巻のパフォーマンスでファンを魅了し、
+                    引退後も種牡馬として日本競馬史に様々な記録を残した世界的名馬です。
+                </p>
+            </div>
+        </div>
+
+        <!-- 三冠馬3: オルフェーヴル -->
+        <div class="horseCard scrollReveal">
+            <img src="img/オルフェーヴル.jpg" alt="オルフェーヴル">
+            <div class="horseCardText">
+                <h4>オルフェーヴル</h4>
+                <span>2011年</span>
+                <p>
+                    史上7頭目のクラシック三冠を達成しました。
+                    凱旋門賞では2年連続2着に終わり悲願達成はならなかったものの、
+                    ラストランの有馬記念を8馬身差で圧勝し、
+                    ファンに強烈な印象を残しました。
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- セクション5: クラシック三冠レースへのリンクメニュー -->
+<section class="classicRaces" id="classic-races">
+    <h3>🏆 クラシック三冠レース紹介</h3>
+    <p class="classicRacesIntro">
+        クラシック三冠を構成する3つのGⅠ競走を紹介します。
+        それぞれ異なる距離と特徴を持ち、3歳馬の頂点を決める
+        重要なレースとして位置付けられています。
+    </p>
+
+    <div class="menuGrid">
+        <!-- 皐月賞リンク -->
+        <a href="satsuki.html" class="raceMenu scrollReveal">
+            <div class="menuCard">
+                <img src="img/satuki.jpg" alt="皐月賞">
+                <h3>🏆 皐月賞</h3>
+                <p>中山競馬場<br>芝2000m・4月</p>
+            </div>
+        </a>
+
+        <!-- 日本ダービーリンク -->
+        <a href="derby.html" class="raceMenu scrollReveal">
+            <div class="menuCard">
+                <img src="img/da-bi-.jpg" alt="日本ダービー">
+                <h3>🏆 日本ダービー</h3>
+                <p>東京競馬場<br>芝2400m・5月</p>
+            </div>
+        </a>
+
+        <!-- 菊花賞リンク -->
+        <a href="kikka.html" class="raceMenu scrollReveal">
+            <div class="menuCard">
+                <img src="img/kikka.jpg" alt="菊花賞">
+                <h3>🏆 菊花賞</h3>
+                <p>京都競馬場<br>芝3000m・10月</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- セクション6: 牝馬三冠の概要 -->
+<section class="intro femaleTripleIntro" id="tripleCrown">
+    <div class="introText">
+        <h2><ruby>牝馬<rt>ひんば</rt></ruby>三冠</h2>
+        <p>
+            牝馬三冠とは、3歳牝馬限定で行われる
+            桜花賞、優駿牝馬（オークス）、秋華賞の3つのGⅠ競走を
+            すべて制覇することを指します。
+            牝馬三冠を達成した馬は、日本競馬を代表する名牝として
+            長く語り継がれています。
+        </p>
+        <p>
+            ※<ruby>牝馬<rt>ひんば</rt></ruby>はメスの馬のことを指します。
+            オスの馬は<ruby>牡馬<rt>ぼば</rt></ruby>と呼びます。
+        </p>
+    </div>
+</section>
+
+<!-- セクション7: 代表的な三冠牝馬の紹介 -->
+<section class="tripleCrownHorses femaleTripleHorses">
+    <h3>🏇 三冠牝馬</h3>
+    <p class="horseIntro">
+        これまでに牝馬三冠を達成した7頭の中から、
+        ここでは3頭を紹介します。
+    </p>
+
+    <div class="horseGrid">
+        <!-- 三冠牝馬1: ジェンティルドンナ -->
+        <div class="horseCard scrollReveal">
+            <img src="img/ジェンティルドンナ.jpg" alt="ジェンティルドンナ">
+            <div class="horseCardText">
+                <h4>ジェンティルドンナ</h4>
+                <span>2012年</span>
+                <p>
+                    桜花賞、優駿牝馬、秋華賞を制覇し、
+                    史上4頭目の牝馬三冠を達成した名牝です。
+                    その後もジャパンカップを連覇するなど、
+                    古馬になってからも国内外で大きな活躍をしました。
+                </p>
+            </div>
+        </div>
+
+        <!-- 三冠牝馬2: アーモンドアイ -->
+        <div class="horseCard scrollReveal">
+            <img src="img/アーモンドアイ.jpg" alt="アーモンドアイ">
+            <div class="horseCardText">
+                <h4>アーモンドアイ</h4>
+                <span>2018年</span>
+                <p>
+                    史上5頭目の牝馬三冠で、天皇賞秋連覇、ジャパンカップ2勝を達成しました。
+                    芝GⅠ勝利数はJRA史上最多の9勝を挙げ、この輝いた名牝の軌跡は
+                    末永く讃えられています。
+                </p>
+            </div>
+        </div>
+
+        <!-- 三冠牝馬3: デアリングタクト -->
+        <div class="horseCard scrollReveal">
+            <img src="img/デアリングタクト.jpg" alt="デアリングタクト">
+            <div class="horseCardText">
+                <h4>デアリングタクト</h4>
+                <span>2020年</span>
+                <p>
+                    史上初となる無敗での牝馬三冠を達成しました。
+                    その後はけがの影響もあり白星に恵まれないまま引退したものの、
+                    現在は繁殖牝馬として期待されています。
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- セクション8: 牝馬三冠レースへのリンクメニュー -->
+<section class="classicRaces femaleTripleRaces" id="female-triple-races">
+    <h3>🏆 牝馬三冠レース紹介</h3>
+    <p class="classicRacesIntro">
+        牝馬三冠を構成する3つのGⅠ競走を紹介します。
+        春の桜花賞と優駿牝馬、そして秋の秋華賞を制することで、
+        牝馬三冠達成となります。
+    </p>
+
+    <div class="menuGrid">
+        <!-- 桜花賞リンク -->
+        <a href="oka.html" class="raceMenu scrollReveal">
+            <div class="menuCard">
+                <img src="img/oka.jpg" alt="桜花賞">
+                <h3>🌸 桜花賞</h3>
+                <p>阪神競馬場<br>芝1600m・4月</p>
+            </div>
+        </a>
+
+        <!-- 優駿牝馬（オークス）リンク -->
+        <a href="oaks.html" class="raceMenu scrollReveal">
+            <div class="menuCard">
+                <img src="img/oaks.jpg" alt="優駿牝馬">
+                <h3>🌸 優駿牝馬（オークス）</h3>
+                <p>東京競馬場<br>芝2400m・5月</p>
+            </div>
+        </a>
+
+        <!-- 秋華賞リンク -->
+        <a href="shuka.html" class="raceMenu scrollReveal">
+            <div class="menuCard">
+                <img src="img/shuka.jpg" alt="秋華賞">
+                <h3>🌸 秋華賞</h3>
+                <p>京都競馬場<br>芝2000m・10月</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- セクション9: 天皇賞の概要 -->
+<section class="intro" id="tenno">
+    <div class="introText">
+        <h2>天皇賞</h2>
+        <p>
+            天皇賞は、日本競馬を代表する伝統あるGⅠ競走です。
+            春と秋の年2回開催され、それぞれ異なる距離で
+            競走馬の能力が競われます。
+            長い歴史と格式を持ち、多くの名馬が
+            天皇賞の舞台で熱戦を繰り広げてきました。
+        </p>
+    </div>
+</section>
+
+<!-- セクション10: 天皇賞（春・秋）レースへのリンクメニュー -->
+<section class="menu" id="tenno-races">
+    <h2>🏆 天皇賞レース紹介</h2>
+
+    <div class="menuGrid">
+        <!-- 天皇賞（春）リンク -->
+        <a href="spring.html" class="raceMenu scrollReveal">
+            <div class="menuCard">
+                <img src="img/harutenn.jpg" alt="天皇賞（春）">
+                <h3>👑 天皇賞（春）</h3>
+                <p>京都競馬場<br>芝3200m・4月</p>
+            </div>
+        </a>
+
+        <!-- 天皇賞（秋）リンク -->
+        <a href="autumn.html" class="raceMenu scrollReveal">
+            <div class="menuCard">
+                <img src="img/akittenn.jpg" alt="天皇賞（秋）">
+                <h3>👑 天皇賞（秋）</h3>
+                <p>東京競馬場<br>芝2000m・10月</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- セクション11: グランプリレースの概要 -->
+<section class="intro" id="Guranpuri">
+    <div class="introText">
+        <h2>グランプリレース</h2>
+        <p>
+            グランプリレースとは、ファン投票で出走馬が選ばれる
+            最高峰のレースで、6月の「宝塚記念」と12月の「有馬記念」の総称です。
+            競馬ファンが「今一番見たいスター馬」を直接選ぶため、
+            実力と人気を兼ね備えた一流馬たちが一堂に会し、熱い火花を散らします。
+        </p>
+    </div>
+</section>
+
+<!-- セクション12: グランプリ（宝塚記念・有馬記念）へのリンクメニュー -->
+<section class="menu" id="Guranpuri-races">
+    <h2>🏆 グランプリレース紹介</h2>
+
+    <div class="menuGrid">
+        <!-- 宝塚記念リンク -->
+        <a href="takara.html" class="raceMenu scrollReveal">
+            <div class="menuCard">
+                <img src="img/takara.jpg" alt="宝塚記念">
+                <h3>👑 宝塚記念</h3>
+                <p>阪神競馬場<br>芝2200m・6月</p>
+            </div>
+        </a>
+
+        <!-- 有馬記念リンク -->
+        <a href="arima.html" class="raceMenu scrollReveal">
+            <div class="menuCard">
+                <img src="img/arimakinenn.jpg" alt="有馬記念">
+                <h3>👑 有馬記念</h3>
+                <p>中山競馬場<br>芝2500m・12月</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+</main>
+
+<!-- ==========================================
+     フッター領域（著作権表示・注意書き）
+     ========================================== -->
+<footer>
+    <p>このサイトはWeb制作学習の授業課題として制作した非営利のサイトです。
+        作品に関する著作権・商標権等は各権利者に帰属します。</p>
+</footer>
+
+<!-- 外部JavaScriptファイルの読み込み -->
+<script src="script.js"></script>
+
+<!-- 画面最上部に戻る「ページトップボタン」 -->
+<button id="pageTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">▲</button>
+
+</body>
+</html>
