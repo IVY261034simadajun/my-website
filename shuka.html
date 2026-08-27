@@ -3,24 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- ページのタイトル -->
     <title>秋華賞</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="season-autumn">
 
+<!-- サブページ用のヘッダー領域 -->
 <header class="subHeader">
     <h1>🏇 日本競馬 GⅠレース紹介</h1>
 </header>
 
+<!-- メインコンテンツカード -->
 <div class="card">
 
     <h2>🍁 秋華賞（GⅠ）</h2>
 
     <img src="img/ミッキークイーン.jpg" class="detailImage" alt="秋華賞">
 
+    <!-- レース概要セクション -->
     <h3>レース概要</h3>
-
     <p>
         秋華賞は3歳牝馬によって争われるGⅠレースであり、
         牝馬三冠競走の第3戦です。
@@ -29,8 +32,8 @@
         最後の一冠をかけて競い合います。
     </p>
 
+    <!-- レースの特徴・詳細データリスト -->
     <h3>特徴</h3>
-
     <ul>
         <li>🏇 開催競馬場：京都競馬場</li>
         <li>📏 距離：芝2000m</li>
@@ -40,18 +43,22 @@
         <li>⭐ 3歳牝馬の秋の頂点を決める重要なレース</li>
     </ul>
 
+    <!-- レコード開閉ボタン -->
     <button class="recordBtn" onclick="toggleRecord('record1', this)">
         レコードを見る
     </button>
 
+    <!-- アコーディオン開閉するレコード詳細エリア -->
     <div class="record" id="record1">
         <div class="recordBox">
+            <!-- レコード情報のテキスト部分 -->
             <div class="recordText">
                 <p><strong>⏱ レコードタイム</strong><br>1分56秒9</p>
                 <p><strong>🐎 記録した馬</strong><br>ミッキークイーン</p>
                 <p><strong>🏇 騎手</strong><br>浜中俊</p>
                 <p><strong>📅 達成年</strong><br>2015年</p>
             </div>
+            <!-- 埋め込みYouTube動画エリア -->
             <div class="recordImage">
                 <iframe
                     src="https://www.youtube.com/embed/zRm2TG5TloA"
@@ -64,10 +71,12 @@
     </div>
 </div>
 
+<!-- トップページの該当セクションへ戻るボタン -->
 <a href="index.html#female-triple-races" class="backBtn">
     ← 牝馬三冠レース紹介へ戻る
 </a>
 
+<!-- ページ最上部へスムーズスクロールするボタン -->
 <button id="pageTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">▲</button>
 
 </body>

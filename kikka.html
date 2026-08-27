@@ -3,60 +3,65 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>菊花賞</title>
+    <!-- ページのタイトル -->
+    <title>優駿牝馬（オークス）</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="season-autumn">
 
+<!-- サブページ用のヘッダー領域 -->
 <header class="subHeader">
     <h1>🏇 日本競馬 GⅠレース紹介</h1>
 </header>
 
+<!-- メインコンテンツカード -->
 <div class="card">
 
-    <h2>🏆 菊花賞（GⅠ）</h2>
+    <h2>🌸 優駿牝馬（オークス）（GⅠ）</h2>
 
-    <img src="img/トーホウジャッカル.jpg" class="detailImage" alt="菊花賞">
+    <img src="img/ラブズオンリーユー.jpg" class="detailImage" alt="優駿牝馬（オークス）">
 
+    <!-- レース概要セクション -->
     <h3>レース概要</h3>
-
     <p>
-        菊花賞は日本クラシック三冠競走の第3戦であり、
-        「最も強い馬が勝つ」と言われる3歳限定GⅠレースです。
-        芝3000mという長距離で行われるため、スピードだけでなく
-        スタミナや折り合い、騎手の戦略も重要となります。
-        このレースに勝利するとクラシック三冠を達成する可能性があり、
-        三冠馬誕生の舞台としても知られています。
+        優駿牝馬（オークス）は3歳牝馬によって争われるGⅠレースであり、
+        牝馬三冠競走の第2戦です。
+        3歳牝馬にとって春の大舞台となる重要なレースで、
+        2400mという長い距離をこなすスタミナとスピードが求められます。
     </p>
 
+    <!-- レースの特徴・詳細データリスト -->
     <h3>特徴</h3>
-
     <ul>
-        <li>🏇 開催競馬場：京都競馬場</li>
-        <li>📏 距離：芝3000m</li>
-        <li>📅 開催時期：10月下旬</li>
-        <li>💰 1着賞金：約2億円</li>
-        <li>👑 クラシック三冠 第3戦</li>
-        <li>⭐ 「最も強い馬が勝つ」と言われるレース</li>
+        <li>🏇 開催競馬場：東京競馬場</li>
+        <li>📏 距離：芝2400m</li>
+        <li>📅 開催時期：5月下旬</li>
+        <li>💰 1着賞金：約1億7000万円</li>
+        <li>👑 牝馬三冠 第2戦</li>
+        <li>⭐ 3歳牝馬の頂点を決める重要なレース</li>
     </ul>
 
-    <button class="recordBtn" onclick="toggleRecord('record3', this)">
-    レコードを見る
+    <!-- レコード開閉ボタン -->
+    <button class="recordBtn" onclick="toggleRecord('record1', this)">
+        レコードを見る
     </button>
 
-    <div class="record" id="record3">
+    <!-- アコーディオン開閉するレコード詳細エリア -->
+    <div class="record" id="record1">
         <div class="recordBox">
+            <!-- レコード情報のテキスト部分 -->
             <div class="recordText">
-                <p><strong>⏱ レコードタイム</strong><br>3分01秒0</p>
-                <p><strong>🐎 記録した馬</strong><br>トーホウジャッカル</p>
-                <p><strong>🏇 騎手</strong><br>酒井 学</p>
-                <p><strong>📅 達成年</strong><br>2014年</p>
+                <p><strong>⏱ レコードタイム</strong><br>2分22秒8</p>
+                <p><strong>🐎 記録した馬</strong><br>ラブズオンリーユー</p>
+                <p><strong>🏇 騎手</strong><br>ミルコ・デムーロ</p>
+                <p><strong>📅 達成年</strong><br>2019年</p>
             </div>
+            <!-- 埋め込みYouTube動画エリア -->
             <div class="recordImage">
                 <iframe
-                    src="https://www.youtube.com/embed/foEsh7bZX04"
-                    title="菊花賞 レコード動画"
+                    src="https://www.youtube.com/embed/HDHNJ8ruYl4"
+                    title="オークス レコード動画"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
@@ -65,10 +70,12 @@
     </div>
 </div>
 
-<a href="index.html#classic-races" class="backBtn">
-    ← クラシック三冠レース紹介へ戻る
+<!-- トップページの該当セクションへ戻るボタン -->
+<a href="index.html#female-triple-races" class="backBtn">
+    ← 牝馬三冠レース紹介へ戻る
 </a>
 
+<!-- ページ最上部へスムーズスクロールするボタン -->
 <button id="pageTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">▲</button>
 
 </body>

@@ -3,24 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- ページのタイトル -->
     <title>皐月賞</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="season-green">
 
+<!-- サブページ用のヘッダー領域 -->
 <header class="subHeader">
     <h1>🏇 日本競馬 GⅠレース紹介</h1>
 </header>
 
+<!-- メインコンテンツカード -->
 <div class="card">
 
     <h2>🏆 皐月賞（GⅠ）</h2>
 
     <img src="img/ロブチェン.jpg" class="detailImage" alt="皐月賞">
 
+    <!-- レース概要セクション -->
     <h3>レース概要</h3>
-
     <p>
         皐月賞は日本クラシック三冠競走の第1戦であり、
         「最も速い馬が勝つ」と言われる3歳限定GⅠレースです。
@@ -28,8 +31,8 @@
         多くの名馬がここから誕生しています。
     </p>
 
+    <!-- レースの特徴・詳細データリスト -->
     <h3>特徴</h3>
-
     <ul>
         <li>🏇 開催競馬場：中山競馬場</li>
         <li>📏 距離：芝2000m</li>
@@ -39,18 +42,22 @@
         <li>⭐ 「最も速い馬が勝つ」と言われるレース</li>
     </ul>
 
+    <!-- レコード開閉ボタン -->
     <button class="recordBtn" onclick="toggleRecord('record1', this)">
     レコードを見る
     </button>
 
+    <!-- アコーディオン開閉するレコード詳細エリア -->
     <div class="record" id="record1">
         <div class="recordBox">
+            <!-- レコード情報のテキスト部分 -->
             <div class="recordText">
                 <p><strong>⏱ レコードタイム</strong><br>1分56秒5</p>
                 <p><strong>🐎 記録した馬</strong><br>ロブチェン</p>
                 <p><strong>🏇 騎手</strong><br>松山 弘平</p>
-                <p><strong>📅 達成年</strong><br>2026年</p>               
+                <p><strong>📅 達成年</strong><br>2026年</p>              
             </div>
+            <!-- 埋め込みYouTube動画エリア -->
             <div class="recordImage">
                 <iframe
                     src="https://www.youtube.com/embed/iFhlw1gOGo8"
@@ -63,10 +70,12 @@
     </div>
 </div>
 
+<!-- トップページの該当セクションへ戻るボタン -->
 <a href="index.html#classic-races" class="backBtn">
     ← クラシック三冠レース紹介へ戻る
 </a>
 
+<!-- ページ最上部へスムーズスクロールするボタン -->
 <button id="pageTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">▲</button>
 
 </body>

@@ -3,32 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- ページのタイトル -->
     <title>天皇賞（秋）</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="season-autumn">
 
+<!-- サブページ用のヘッダー領域 -->
 <header class="subHeader">
     <h1>🏇 日本競馬 GⅠレース紹介</h1>
 </header>
 
+<!-- メインコンテンツカード -->
 <div class="card">
 
     <h2>👑 天皇賞（秋）（GⅠ）</h2>
 
     <img src="img/イクイノックス.jpg" class="detailImage" alt="天皇賞（秋）">
 
+    <!-- レース概要セクション -->
     <h3>レース概要</h3>
-
     <p>
         天皇賞（秋）は4歳以上の競走馬によって争われる伝統あるGⅠレースです。
         東京競馬場・芝2000mで行われ、「秋の中距離王決定戦」として高い人気を誇ります。
         国内外の実力馬が集結することも多く、ジャパンカップや有馬記念へ向かう有力馬の重要な一戦となっています。
     </p>
 
+    <!-- レースの特徴・詳細データリスト -->
     <h3>特徴</h3>
-
     <ul>
         <li>🏇 開催競馬場：東京競馬場</li>
         <li>📏 距離：芝2000m</li>
@@ -38,18 +41,22 @@
         <li>⭐ 「秋の中距離王決定戦」と呼ばれるレース</li>
     </ul>
 
+    <!-- レコード開閉ボタン -->
     <button class="recordBtn" onclick="toggleRecord('record5', this)">
     レコードを見る
     </button>
 
+    <!-- アコーディオン開閉するレコード詳細エリア -->
     <div class="record" id="record5">
         <div class="recordBox">
+            <!-- レコード情報のテキスト部分 -->
             <div class="recordText">
                 <p><strong>⏱ レコードタイム</strong><br>1分55秒2</p>
                 <p><strong>🐎 記録した馬</strong><br>イクイノックス</p>
                 <p><strong>🏇 騎手</strong><br>Ｃ.ルメール</p>
                 <p><strong>📅 達成年</strong><br>2023年</p>
             </div>
+            <!-- 埋め込みYouTube動画エリア -->
             <div class="recordImage">
                 <iframe
                     src="https://www.youtube.com/embed/lqwkjfhnh84"
@@ -62,8 +69,12 @@
     </div>
 </div>
 
-<a href="index.html#menu" class="backBtn">← レース一覧へ戻る</a>
+<!-- トップページの該当セクションへ戻るボタン -->
+<a href="index.html#menu" class="backBtn">
+    ← 天皇賞レース紹介へ戻る
+</a>
 
+<!-- ページ最上部へスムーズスクロールするボタン -->
 <button id="pageTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">▲</button>
 
 </body>
