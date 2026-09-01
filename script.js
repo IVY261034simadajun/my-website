@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
 /* ==========================================
    レコード（アコーディオン）の開閉処理 ＆ カウントアップ（色変化演出付き）
    ========================================== */
 /* 他のレコードを閉じ、クリックされた詳細エリアを開いてスムーズスクロール＆カウントアップ。*/
 
-function toggleRecord(id, button){
+// HTMLのonclickから呼び出せるようにwindowオブジェクトに登録
+window.toggleRecord = function(id, button){
     const target = document.getElementById(id);
     const records = document.querySelectorAll('.record');
     const buttons = document.querySelectorAll('.recordBtn');
@@ -37,7 +37,7 @@ function toggleRecord(id, button){
             target.scrollIntoView({ behavior:'smooth', block:'nearest' });
         }, 100);
     }
-}
+};
 
 // カウントアップ＆色変化を制御する関数
 function startCountUp(container) {
@@ -89,6 +89,8 @@ function startCountUp(container) {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
 
 /* ==========================================
    メインビジュアルのスライダー処理
@@ -217,23 +219,48 @@ window.addEventListener('scroll', () => {
 /* 画面内に要素が入ってきたらクラスを付与して浮き出させる */
 const scrollElements = document.querySelectorAll(".scrollReveal");
 
-const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
+if (window.location.hash) {
+    // 1. ハッシュ(#)付き遷移の場合、スムーズスクロール自体を一時解除
+    const htmlElem = document.documentElement;
+    const originalScrollBehavior = htmlElem.style.scrollBehavior;
+    htmlElem.style.scrollBehavior = 'auto';
+
+    // 2. 移動中にアニメーションがポコポコ出ないよう、全要素を即時表示状態にする
+    scrollElements.forEach((element) => {
+        element.classList.add("show");
     });
-},{
-    threshold:0.15
-});
 
-// すべての対象要素を監視
-scrollElements.forEach((element) => {
-    scrollObserver.observe(element);
-});
+    // 3. 該当のハッシュ位置へ強制一瞬ジャンプ
+    const targetElem = document.querySelector(window.location.hash);
+    if (targetElem) {
+        targetElem.scrollIntoView({ behavior: 'auto' });
+    }
 
-// 初期読み込み時の表示のブレ防止
-window.dispatchEvent(new Event('scroll'));
+    // 4. ジャンプ完了後にスムーズスクロール設定を元に戻す
+    setTimeout(() => {
+        htmlElem.style.scrollBehavior = originalScrollBehavior;
+    }, 500);
+
+} else {
+    // 通常訪問時のみスクロール監視を有効化
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+            }
+        });
+    },{
+        threshold:0.15
+    });
+
+    // すべての対象要素を監視
+    scrollElements.forEach((element) => {
+        scrollObserver.observe(element);
+    });
+
+    // 初期読み込み時の表示のブレ防止
+    window.dispatchEvent(new Event('scroll'));
+}
 
 /* ==========================================
    背景に季節のアイテムを舞い上がらせる・降らせる処理

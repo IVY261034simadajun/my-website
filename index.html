@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>日本競馬 GⅠレース紹介</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="style2.css">
 </head>
@@ -56,6 +57,7 @@
         <li><a href="#tripleCrown">牝馬三冠</a></li>
         <li><a href="#tenno">天皇賞</a></li>
         <li><a href="#Guranpuri">グランプリ</a></li>
+        <li><a href="#map">ロードマップ</a></li>
     </ul>
 </nav>
 
@@ -102,7 +104,7 @@
                 </tr>
                 <tr>
                     <th>主なレース</th>
-                    <td>皐月賞、日本ダービー、ジャパンC など</td>
+                    <td>皐月賞、日本ダービー、有馬記念 など</td>
                     <td>フェブラリーS、チャンピオンズC など</td>
                 </tr>
             </table>
@@ -110,11 +112,20 @@
                 芝レースは華やかでスピード決着が多く、日本の主流です。一方、ダートは砂埃を
                 巻き上げて走るパワフルなレース展開が魅力で、天候による影響を受けにくいタフさが求められます。
             </p>
+            <!-- 馬場状態のワンポイント解説 -->
+            <div class="baba-info-box">
+                <h4>🌧 馬場状態による変化</h4>
+                <p class="baba-desc">雨の影響で水分を含むと「良 → 稍重（ややおも） → 重 → 不良」と変化します。</p>
+                <ul class="baba-list">
+                    <li><strong>芝：</strong>水分を含むと滑りやすくなり、<b>パワーやスタミナ（タフさ）</b>が求められます。</li>
+                    <li><strong>ダート：</strong>水分を含むと砂が固まって走りやすくなり、逆に<b>スピードが出やすく</b>なります。</li>
+                </ul>
+            </div>
         </div>
 
         <!-- 距離カテゴリーの解説リスト -->
         <div class="knowledgeCard">
-            <h3>📏 距離による4つのカテゴリー</h3>
+            <h3>📏 距離による5つのカテゴリー</h3>
             <p class="knowledgeIntro">走る長さによって、出場する馬のタイプやレース展開がガラリと変わります。</p>
             
             <ul class="distanceList">
@@ -435,6 +446,96 @@
                 <p>中山競馬場<br>芝2500m・12月</p>
             </div>
         </a>
+    </div>
+</section>
+
+<!-- 年間GⅠレーススケジュール（6ステップ・完全版） -->
+<section class="gi-timeline-section scrollReveal" id="map">
+    <h3 class="section-title">🗓 年間GⅠレースのロードマップ</h3>
+    <p class="section-subtitle">季節とカテゴリーごとに繰り広げられる、最高峰GⅠの年間ストーリー</p>
+    
+    <div class="timeline-container">
+        <!-- 1. 春のダート＆短距離 -->
+        <div class="timeline-card step-1">
+            <div class="timeline-header">
+                <span class="season-badge">🌸 2月 〜 3月</span>
+                <h4>開幕 ＆ スピード王決定戦</h4>
+            </div>
+            <p class="timeline-summary">ダート最高峰「フェブラリーS」で開幕。春の電撃スプリント「高松宮記念」へ繋がります。</p>
+            <div class="timeline-races">
+                <span>主なGⅠ:</span> フェブラリーS / 高松宮記念
+            </div>
+        </div>
+
+        <!-- 2. 春のクラシック＆牝馬 -->
+        <div class="timeline-card step-2">
+            <div class="timeline-header">
+                <span class="season-badge">🌸 4月 〜 5月</span>
+                <h4>3歳クラシック ＆ 牝馬の頂点</h4>
+            </div>
+            <p class="timeline-summary">一生に一度の「皐月賞」「桜花賞」が開幕。長距離最強を決める天皇賞（春）から牝馬の頂点を決める「ヴィクトリアマイル」「オークス」へ。</p>
+            <div class="timeline-races">
+                <span>主なGⅠ:</span> 桜花賞 / 皐月賞 / 天皇賞（春） / ヴィクトリアマイル / オークス
+            </div>
+        </div>
+
+        <!-- 3. 春の頂点＆グランプリ -->
+        <div class="timeline-card step-3">
+            <div class="timeline-header">
+                <span class="season-badge">🌿 5月下旬 〜 6月</span>
+                <h4>ホースマン最高の栄誉 ＆ 宝塚記念</h4>
+            </div>
+            <p class="timeline-summary">日本競馬の頂点「日本ダービー」が開催。上半期の総決算ファン投票「宝塚記念」で春の陣が完結します。</p>
+            <div class="timeline-races">
+                <span>主なGⅠ:</span> 日本ダービー / 安田記念 / 宝塚記念
+            </div>
+        </div>
+
+        <!-- 4. 秋の電撃＆クラシック最終章 -->
+        <div class="timeline-card step-4">
+            <div class="timeline-header">
+                <span class="season-badge">🍁 9月 〜 10月</span>
+                <h4>秋の陣始動 ＆ 三冠完結</h4>
+            </div>
+            <p class="timeline-summary">「スプリンターズS」で秋が開幕。3歳馬たちのラストチャンス「秋華賞」「菊花賞」で三冠馬の栄誉を掴みます。</p>
+            <div class="timeline-races">
+                <span>主なGⅠ:</span> スプリンターズS / 秋華賞 / 菊花賞
+            </div>
+        </div>
+
+        <!-- 5. 秋の中長距離＆国際決戦 -->
+        <div class="timeline-card step-5">
+            <div class="timeline-header">
+                <span class="season-badge">🍁 10月下旬 〜 11月</span>
+                <h4>古馬最高峰 ＆ 世界との激闘</h4>
+            </div>
+            <p class="timeline-summary">中距離最速を決める「天皇賞（秋）」、マイル王決定戦を経て、世界の強豪が集う「ジャパンカップ」へ。</p>
+            <div class="timeline-races">
+                <span>主なGⅠ:</span> 天皇賞（秋） / マイルCS / ジャパンC
+            </div>
+        </div>
+
+        <!-- 6. 年末のグランドフィナーレ -->
+        <div class="timeline-card step-6">
+            <div class="timeline-header">
+                <span class="season-badge">❄️ 12月</span>
+                <h4>総決算 ＆ 有馬記念</h4>
+            </div>
+            <p class="timeline-summary">2歳王者戦やダート頂上決戦を経て、日本中が熱狂する夢のオールスター戦「有馬記念」で締めくくられます。</p>
+            <div class="timeline-races">
+                <span>主なGⅠ:</span> チャンピオンズC / 有馬記念 / ホープフルS
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 締めの一言（クロージング） -->
+<section class="closing-message-section scrollReveal">
+    <div class="closing-inner">
+        <span class="closing-quote-icon">“</span>
+        <h3>サラブレッドたちが紡ぐ、一瞬のドラマ。</h3>
+        <p>血統のロマン、ジョッキーの駆け引き、そしてラスト直線の一瞬にかける激闘。<br>今週末もまた、新しい歴史のページが開かれます。</p>
+        <span class="closing-subtext">— 競馬の世界へようこそ —</span>
     </div>
 </section>
 
