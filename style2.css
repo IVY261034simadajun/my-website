@@ -807,6 +807,83 @@
 }
 
 /* ==========================================
+   サブページのカードデザイン＆レスポンシブ対応
+   ========================================== */
+
+/* メインのカード表示 */
+.card {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detailImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+/* アコーディオン内部のレイアウト */
+.recordBox {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.recordText, .recordImage {
+    flex: 1;
+}
+
+.recordImage iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* アコーディオンの初期状態（アニメーション用） */
+.record {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+/* スマホ表示（画面幅768px以下）の設定 */
+@media screen and (max-width: 768px) {
+    .card {
+        margin: 10px;
+        padding: 16px;
+    }
+
+    /* レコード内のテキストと動画を縦並びに */
+    .recordBox {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .recordImage iframe {
+        height: 180px;
+    }
+
+    /* 戻るボタンをタップしやすく */
+    .backBtn {
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+        padding: 12px;
+        background: #ffffff;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+}
+
+/* ==========================================
     メニューカードのレスポンシブ幅調整
    ========================================== */
 /* タブレットサイズで2列にする設定 */
