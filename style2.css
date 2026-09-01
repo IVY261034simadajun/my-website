@@ -1,0 +1,824 @@
+/* ==========================================
+    イントロダクション（GⅠとは）
+   ========================================== */
+/* 文章と画像を左右に綺麗に並べる設定 */
+.intro{
+    width:90%;
+    max-width:1100px;
+    margin:60px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.introText{
+    flex:1;
+}
+
+.introText h2{
+    color:var(--main-color); 
+    font-size:34px;
+    margin-bottom:20px;
+    border-left:6px solid var(--accent-color); 
+    padding-left:15px;
+}
+
+.introText p{
+    font-size:18px;
+}
+
+.introImage{
+    flex:1;
+    text-align:center;
+}
+
+/* 右側の紹介画像に角丸と軽い影をつける */
+.introImage img{
+    width:100%;
+    max-width:380px;
+    border-radius:15px;
+    box-shadow:0 5px 18px rgba(0,0,0,.5);
+}
+
+/* ==========================================
+    競馬の基礎知識（馬場・距離の違い）
+   ========================================== */
+.knowledgeSection {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.sectionTitleContainer {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sectionTitleContainer h2 {
+    font-size: 26px;
+    color: var(--main-color); 
+    margin-bottom: 10px;
+}
+
+/* 「馬場」と「距離」の2つのカードを左右に並べる設定 */
+.knowledgeGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* ダークグリーン背景の解説ボックス（カード風） */
+.knowledgeCard {
+    background: var(--card-bg); 
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    width: calc(50% - 15px);
+    min-width: 320px;
+    box-sizing: border-box;
+}
+
+.knowledgeCard h3 {
+    font-size: 20px;
+    color: var(--main-color); 
+    border-bottom: 2px solid var(--accent-color); 
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.knowledgeIntro {
+    color: #e0e0e0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 芝・ダートの比較テーブル */
+.knowledgeTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+.knowledgeTable th, .knowledgeTable td {
+    border: 1px solid var(--border-color); 
+    padding: 12px;
+    text-align: left;
+}
+
+.knowledgeTable th {
+    background-color: #0a1710; 
+    color: var(--main-color);
+    width: 30%;
+}
+
+.knowledgeTable td {
+    color: #e0e0e0;
+}
+
+/* 馬場ごとの特徴をまとめた補足エリア */
+.knowledgeDesc {
+    font-size: 14px;
+    color: #e5e5e5;
+    line-height: 1.7;
+    background: #0a1710; 
+    padding: 15px;
+    border-left: 4px solid var(--accent-color); 
+    border-radius: 0 8px 8px 0;
+}
+
+/* 距離別リスト（スプリント〜長距離） */
+.distanceList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 各距離の区切りを点線にする設定 */
+.distanceList li {
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.distanceList li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.distanceList strong {
+    display: block;
+    font-size: 16px;
+    color: var(--main-color); 
+    margin-bottom: 5px;
+}
+
+.distanceList span {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* タブレット・スマホ用のレスポンシブ対応 */
+@media (max-width: 768px) {
+    .knowledgeCard {
+        width: 100%;
+    }
+}
+
+/* ==========================================
+    クラシック三冠・牝馬三冠セクション
+   ========================================== */
+.classic{
+    width:90%;
+    max-width:1200px;
+    margin:70px auto;
+}
+
+/*クラシック三冠のタイトル*/
+.classic > h2{
+    text-align:center;
+    font-size:36px;
+    color:var(--main-color); 
+    margin-bottom:40px;
+}
+
+/*クラシック三冠とは*/
+.classicExplanation{
+    width:90%;
+    max-width:1100px;
+    margin:60px auto;
+}
+
+.classicExplanation h3{
+    color:var(--main-color);
+    font-size:34px;
+    margin-bottom:20px;
+    border-left:6px solid var(--accent-color); 
+    padding-left:15px;
+}
+
+.classicExplanation p{
+    font-size:18px;
+    line-height:1.8;
+    color:#e0e0e0;
+}
+
+.classicText{
+    font-size:17px;
+    line-height:1.9;
+    color:#e0e0e0;
+    margin-bottom:15px;
+}
+
+.classicText strong{
+    color:var(--main-color); 
+}
+
+/*クラシック三冠馬*/
+.tripleCrownHorses{
+    width:90%;
+    max-width:1100px;
+    margin:70px auto;
+}
+
+.tripleCrownHorses > h3{
+    color:#ecd06f; 
+    font-size:28px;
+    text-align:center;
+    margin-bottom:15px;
+    border-left:none;
+    padding-left:0;
+}
+
+.horseIntro{
+    font-size:17px;
+    line-height:1.9;
+    color:#ccc;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* 3頭の歴代三冠馬をきれいに3列で並べるグリッド設定 */
+.horseGrid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:25px;
+    max-width:1000px;
+    margin:0 auto;
+}
+
+/* 三冠馬の個別カードデザイン */
+.horseCard{
+    background:var(--card-bg); 
+    border-radius:15px;
+    overflow:hidden;
+    border:1px solid var(--border-color);
+    box-shadow:0 4px 15px rgba(0,0,0,.4);
+    transition:.3s;
+}
+
+/* 馬カードに触れたときに少し浮き上がらせる演出 */
+.horseCard:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+.horseCard img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.horseCardText{
+    padding:15px;
+}
+
+.horseCardText h4{
+    text-align:center;
+    color:var(--main-color);
+    font-size:21px;
+    margin-bottom:3px;
+}
+
+.horseCardText span{
+    display:block;
+    text-align:center;
+    color:#aaa;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.horseCardText p{
+    font-size:15px;
+    line-height:1.7;
+    color:#e0e0e0;
+    margin:0;
+}
+
+/* 中画面（タブレット等）用：3列から2列に変える設定 */
+@media(max-width:1000px){
+
+    .horseGrid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* スマホ用：縦1列に潰して文字サイズを調整する設定 */
+@media(max-width:700px){
+
+    .classic{
+        width:90%;
+    }
+
+    .classic > h2{
+        font-size:30px;
+    }
+
+    .classicExplanation{
+        padding:25px 20px;
+    }
+
+    .classicExplanation > h3{
+        font-size:24px;
+    }
+
+    .classicText{
+        font-size:16px;
+    }
+
+    .horseGrid{
+        grid-template-columns:1fr;
+    }
+
+    .tripleCrownHorses > h3{
+        font-size:24px;
+    }
+
+    .horseCard img{
+        height:240px;
+    }
+}
+
+@media(max-width:700px){
+
+    .horseGrid{
+        grid-template-columns:1fr;
+        max-width:400px;
+    }
+
+    .horseCard img{
+        height:200px;
+    }
+
+}
+
+/*クラシック三冠レース*/
+.classicRaces{
+    width:90%;
+    max-width:1200px;
+    margin:70px auto;
+}
+
+.classicRaces > h3{
+    color:var(--main-color); 
+    font-size:28px;
+    text-align:center;
+    margin-bottom:15px;
+    border-left:none;
+    padding-left:0;
+}
+
+.classicRacesIntro{
+    text-align:center;
+    font-size:17px;
+    line-height:1.9;
+    color:#ccc;
+    margin-bottom:35px;
+}
+
+/*牝馬三冠*/
+.femaleTripleIntro{
+    margin-top:80px;
+    margin-bottom:60px;
+}
+
+.femaleTripleHorses{
+    margin-bottom:70px;
+}
+
+.femaleTripleRaces{
+    width:90%;
+    max-width:1200px;
+    margin:70px auto;
+}
+
+.femaleTripleRaces > h3{
+    color:var(--main-color); 
+    font-size:28px;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.classicRacesIntro{
+    font-size:17px;
+    line-height:1.9;
+    color:#ccc;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* ==========================================
+    代表GⅠレース：選択メニュー（カード一覧）
+   ========================================== */
+.menu{
+    width:90%;
+    max-width:1200px;
+    margin:70px auto;
+}
+
+.menu h2{
+    text-align:center;
+    font-size:36px;
+    color:var(--main-color); 
+    margin-bottom:40px;
+}
+
+/* 主要レースの選択カードを等間隔で綺麗に並べる設定 */
+.menuGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* カード全体がリンクボタンとして機能するようにする設定 */
+.raceMenu{
+    text-decoration:none;
+    color:inherit;
+    width: calc(33.333% - 20px);
+    min-width: 280px;
+}
+
+.menuCard{
+    background:var(--card-bg); 
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.4);
+    transition:0.3s;
+    border:1px solid var(--border-color);
+}
+
+.menuCard:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.6);
+}
+
+.menuCard img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.menuCard h3{
+    text-align:center;
+    color:var(--main-color);
+    margin:15px 0 10px;
+    font-size:24px;
+}
+
+.menuCard p{
+    text-align:center;
+    color:#e0e0e0;
+    line-height:1.7;
+    padding-bottom:20px;
+}
+
+/* カードの一番下に自動で「クリックして詳細を見る」の帯を差し込む設定 */
+.menuCard::after{
+    content:"クリックして詳細を見る";
+    display:block;
+    text-align:center;
+    background:#0a1710; 
+    color: var(--main-color); 
+    padding:12px;
+    font-weight:bold;
+    transition:.3s;
+    border-top: 1px solid var(--border-color);
+}
+
+/* カードに触れた時に下の帯の色を反転させる演出 */
+.menuCard:hover::after{
+    background:var(--accent-color); 
+    color:#111; 
+}
+
+/* ==========================================
+    各レース詳細ページ・個別カード
+   ========================================== */
+.card{
+    width:90%;
+    max-width:1000px;
+    margin:60px auto;
+    background:var(--card-bg); 
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.5);
+    border:1px solid var(--border-color);
+}
+
+.card h2{
+    width:100%;
+    margin:0;
+    padding:20px 0;
+    text-align:center;
+    font-size:32px;
+    color: var(--main-color); 
+
+    background:linear-gradient(to bottom,
+        #1b3b29 0%,
+        #0d1e14 55%,
+        #050d08 100%); 
+
+    border-radius:18px 18px 0 0;
+    box-shadow:none;
+    letter-spacing:2px;
+    border-bottom: 2px solid var(--accent-color); 
+}
+
+.detailImage{
+    width:100%;
+    max-width:450px;
+    height:290px;
+    display:block;
+    margin:20px auto;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+/* レース概要などの小見出しの左側にアクセント線を引く */
+.card h3{
+    color:var(--main-color);
+    font-size:24px;
+    margin:30px 30px 15px;
+    border-left:5px solid var(--accent-color); 
+    padding-left:12px;
+}
+
+.card p{
+    margin:0 30px 25px;
+    font-size:17px;
+    line-height:1.9;
+    color:#e0e0e0;
+}
+
+.card ul{
+    margin:0 45px 30px;
+}
+
+.card li{
+    margin-bottom:12px;
+    font-size:17px;
+    line-height:1.8;
+    color:#e0e0e0;
+}
+
+/* 「レースレコードを見る」ボタンのデザイン */
+.card button{
+    display:block;
+    margin:30px auto;
+    padding:14px 40px;
+    background:var(--accent-color); 
+    color: #111; 
+    border:none;
+    border-radius:30px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.card button:hover{
+    background: var(--main-color); 
+    transform:scale(1.05);
+}
+
+/* ==========================================
+    レースレコード（開閉コンテンツ・アコーディオン）
+   ========================================== */
+/* 最初は高さを0にして非表示にしておく設定 */
+.record{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    width:85%;
+    margin:0 auto;
+    padding:0 18px;
+    text-align:left;
+    background:#0a1710; 
+    border-left:none;
+    border-radius:10px;
+    color:var(--text-color);
+    transition:max-height .6s ease,opacity .5s ease,padding .5s ease,margin .5s ease;
+    border: 1px solid var(--border-color);
+}
+
+/* ボタンが押された時、JavaScriptでこのクラスをつけて下にするっと広げる */
+.record.show{
+    max-height:800px;
+    opacity:1;
+    padding:25px;
+    margin:0 auto 35px;
+}
+
+/* レコード情報を左右（テキストと動画窓）に配置 */
+.recordBox{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.recordText{
+    flex:0 0 40%;
+    text-align:center;
+}
+
+.recordText p{
+    margin:0 0 25px;
+    font-size:17px;
+    color:#e0e0e0;
+}
+
+.recordText strong{
+    color:var(--main-color); 
+    font-size:18px;
+}
+
+/* YouTubeなどの埋め込み動画エリア */
+.recordImage{
+    flex:0 0 55%;
+    text-align:center;
+}
+
+.recordImage iframe{
+    width:100%;
+    max-width:480px;
+    height:300px;
+    border:none;
+    border-radius:12px;
+}
+
+.imageCaption{
+    margin-top:10px;
+    font-size:14px;
+    color:#aaa;
+}
+
+/*  詳細カードのアニメーション */
+.card{
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 25px rgba(0,0,0,.5);
+}
+
+/* 「一覧に戻る」ボタン */
+.backBtn{
+    display:table;
+    margin:40px auto 60px;
+    padding:12px 30px;
+    background:#1b3b29; 
+    color:var(--main-color); 
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+    border: 1px solid var(--border-color);
+}
+
+.backBtn:hover{
+    background:var(--accent-color); 
+    color: #111;
+    border-color: var(--accent-color);
+    transform:translateY(-2px);
+}
+
+/* 動画の比率を16:9に保ちつつスマホ画面に収める設定 */
+.recordImage iframe {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card li {
+    margin-bottom: 12px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+    ホバーエフェクト（カードの動き）
+   ========================================== */
+
+/* レース紹介カードのホバー */
+.raceMenu {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.raceMenu:hover {
+    transform: translateY(-7px);
+}
+
+.menuCard, .horseCard {
+    overflow: hidden; 
+}
+
+/* カード内の画像ホバー */
+.menuCard img, .horseCard img {
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.raceMenu:hover .menuCard img,
+.horseCard:hover img {
+    transform: scale(1.06);
+}
+
+/* 三冠馬カードのホバー（浮き上がり） */
+.horseCard {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.horseCard:hover {
+    transform: translateY(-5px);
+}
+
+/* ==========================================
+    スマートフォン・タブレット向け（レスポンシブ）
+   ========================================== */
+@media(max-width:768px){
+
+    /* レコード開閉部分をスマホでは縦並びにする */
+    .recordBox{
+        flex-direction:column;
+    }
+
+    .recordImage img{
+        max-width:100%;
+        height:220px;
+    }
+}
+
+@media(max-width:1000px){
+
+    .menuGrid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    .menuGrid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* スマホでの見栄えを整えるための細かい文字サイズ・高さ調整 */
+@media(max-width:768px){
+
+    .card h2{
+        font-size:26px;
+    }
+
+    .detailImage{
+        height:220px;
+    }
+
+    .card h3{
+        font-size:22px;
+    }
+
+    .card p,
+    .card li{
+        font-size:16px;
+    }
+}
+
+/* ==========================================
+    メニューカードのレスポンシブ幅調整
+   ========================================== */
+/* タブレットサイズで2列にする設定 */
+@media (max-width: 900px) {
+    .raceMenu {
+        width: calc(50% - 15px);
+    }
+}
+
+/* スマホサイズで1列にする設定 */
+@media (max-width: 600px) {
+    .raceMenu {
+        width: 100%;
+    }
+}

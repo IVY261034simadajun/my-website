@@ -1,27 +1,39 @@
+/* ===================================================
+    カラーパレット設定：パターンA（JRAグリーン）
+   =================================================== */
+:root {
+    --bg-color: #0d1e14;       /* 画面全体の背景 */
+    --card-bg: #162e20;        /* レースカードの背景 */
+    --text-color: #ffffff;     /* 通常の文字 */
+    --sub-text: #d1d5db;        /* 説明文・補足テキスト */
+    --main-color: #ecd06f;     /* 見出し */
+    --accent-color: #cca43b;   /* ボタンや電撃カウンター */
+    --border-color: #234431;   /* 背景に馴染む枠線 */
+}
+
 /* ==========================================
-   全体・共通設定
+    全体・共通設定
    ========================================== */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    overflow-wrap: break-word;
 }
 
 html{
-    /* リンクをクリックした時に滑らかにスクロールさせる設定 */
     scroll-behavior:smooth;
 }
 
 body{
     font-family:"Yu Gothic","Meiryo",sans-serif;
-    background:#f7faf7;
-    color:#444;
+    background:var(--bg-color);
+    color:var(--text-color);
     line-height:1.8;
 }
 
-
 /* ==========================================
-   メインビジュアル（ヒーローヘッダー）
+    メインビジュアル（ヒーローヘッダー）
    ========================================== */
 .hero{
     position:relative;
@@ -49,13 +61,14 @@ body{
     background-size: cover;
     background-position: center 17%;
     background-repeat: no-repeat;
+    object-fit: cover;
 }
 
 /* 画像の上に薄い黒のモヤをかけて文字を読みやすくするレイヤー */
 .heroOverlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.20);
+    background:rgba(13, 30, 20, 0.45); 
 }
 
 /* メイン画像の中央に配置するタイトル文字 */
@@ -73,7 +86,8 @@ body{
 .heroText h1{
     font-size:56px;
     margin-bottom:15px;
-    text-shadow:2px 2px 10px rgba(0,0,0,.5);
+    color: var(--main-color); 
+    text-shadow:2px 2px 12px rgba(0,0,0,.9);
 }
 
 .heroText p{
@@ -91,8 +105,8 @@ body{
     height:42px;
     border:none;
     border-radius:50%;
-    background:rgba(255,255,255,.75);
-    color:#2E8B57;
+    background:rgba(255,255,255,.15);
+    color: #fff;
     font-size:22px;
     cursor:pointer;
     z-index:3;
@@ -110,11 +124,12 @@ body{
 /* 矢印ボタンにホバーした時の演出 */
 .prev:hover,
 .next:hover{
-    background:white;
+    background:var(--accent-color); 
+    color: #111; 
     transform:translateY(-50%) scale(1.05);
 }
 
-/* スライダー下部にある現在地を示すドット（丸ぽち）の並び */
+/* スライダー下部にある現在地を示すドットの並び */
 .dots{
     position:absolute;
     bottom:25px;
@@ -129,24 +144,24 @@ body{
     width:10px;
     height:10px;
     border-radius:50%;
-    background:rgba(255,255,255,.5);
+    background:rgba(255,255,255,.3);
     transition:.3s;
     cursor:pointer;
 }
 
 /* 現在表示中のスライドに対応するドットの強調表示 */
 .dot.active{
-    background:white;
+    background:var(--main-color);
     transform:scale(1.2);
 }
 
 
 /* ==========================================
-   ナビゲーションメニュー
+    ナビゲーションメニュー
    ========================================== */
 nav{
-    background:white;
-    border-bottom:1px solid #ddd;
+    background: #0a1710; 
+    border-bottom:1px solid var(--border-color);
 }
 
 /* メニューのリンクを中央に横並びにする設定 */
@@ -164,189 +179,19 @@ nav a{
     display:block;
     padding:18px;
     text-decoration:none;
-    color:#2E8B57;
+    color:var(--text-color);
     font-weight:bold;
     transition:.3s;
 }
 
-/* メニューにカーソルを乗せた時に金色に変える設定 */
+/* メニューにカーソルを乗せた時の設定 */
 nav a:hover{
-    color:#d4af37;
+    color:var(--main-color); 
 }
 
 
 /* ==========================================
-   イントロダクション（GⅠとは）
-   ========================================== */
-/* 文章と画像を左右に綺麗に並べる設定 */
-.intro{
-    width:90%;
-    max-width:1100px;
-    margin:60px auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:40px;
-}
-
-.introText{
-    flex:1;
-}
-
-.introText h2{
-    color:#344E68;
-    font-size:34px;
-    margin-bottom:20px;
-    border-left:6px ;
-    padding-left:15px;
-}
-
-.introText p{
-    font-size:18px;
-}
-
-.introImage{
-    flex:1;
-    text-align:center;
-}
-
-/* 右側の紹介画像に角丸と軽い影をつける */
-.introImage img{
-    width:100%;
-    max-width:380px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-
-/* ==========================================
-   競馬の基礎知識（馬場・距離の違い）
-   ========================================== */
-.knowledgeSection {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-
-.sectionTitleContainer {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.sectionTitleContainer h2 {
-    font-size: 26px;
-    color: #0b4622;
-    margin-bottom: 10px;
-}
-
-/* 「馬場」と「距離」の2つのカードを左右に並べる設定 */
-.knowledgeGrid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-/* 白背景の解説ボックス（カード風） */
-.knowledgeCard {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    padding: 30px;
-    width: calc(50% - 15px);
-    min-width: 320px;
-    box-sizing: border-box;
-}
-
-.knowledgeCard h3 {
-    font-size: 20px;
-    color: #333;
-    border-bottom: 2px solid #0b4622;
-    padding-bottom: 10px;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.knowledgeIntro {
-    color: #666;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-/* 芝・ダート・障害の比較テーブル */
-.knowledgeTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 15px;
-}
-
-.knowledgeTable th, .knowledgeTable td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-.knowledgeTable th {
-    background-color: #f9f9f9;
-    color: #444;
-    width: 30%;
-}
-
-/* 馬場ごとの特徴をまとめた緑枠の補足エリア */
-.knowledgeDesc {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.7;
-    background: #f5fcf7;
-    padding: 15px;
-    border-left: 4px solid #0b4622;
-    border-radius: 0 8px 8px 0;
-}
-
-/* 距離別リスト（スプリント〜長距離） */
-.distanceList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* 各距離の区切りを点線にする設定 */
-.distanceList li {
-    margin-bottom: 18px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed #eee;
-}
-
-.distanceList li:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.distanceList strong {
-    display: block;
-    font-size: 16px;
-    color: #0b4622;
-    margin-bottom: 5px;
-}
-
-.distanceList span {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* タブレット・スマホ用のレスポンシブ対応 */
-@media (max-width: 768px) {
-    .knowledgeCard {
-        width: 100%;
-    }
-}
-
-
-/* ==========================================
-   レスポンシブ：トップページ共通
+    レスポンシブ：トップページ共通
    ========================================== */
 @media(max-width:900px){
 
@@ -362,531 +207,10 @@ nav a:hover{
     nav ul{
         flex-wrap:wrap;
     }
-
 }
-
 
 /* ==========================================
-   クラシック三冠・牝馬三冠セクション
-   ========================================== */
-.classic{
-    width:90%;
-    max-width:1200px;
-    margin:70px auto;
-}
-
-/*クラシック三冠のタイトル*/
-.classic > h2{
-    text-align:center;
-    font-size:36px;
-    color:#2E8B57;
-    margin-bottom:40px;
-}
-
-/*クラシック三冠とは*/
-.classicExplanation{
-    width:90%;
-    max-width:1100px;
-    margin:60px auto;
-}
-
-.classicExplanation h3{
-    color:#344E68;
-    font-size:34px;
-    margin-bottom:20px;
-    padding-left:15px;
-}
-
-.classicExplanation p{
-    font-size:18px;
-    line-height:1.8;
-    color:#444;
-}
-
-.classicText{
-    font-size:17px;
-    line-height:1.9;
-    color:#555;
-    margin-bottom:15px;
-}
-
-.classicText strong{
-    color:#2E8B57;
-}
-
-/*クラシック三冠馬*/
-.tripleCrownHorses{
-    width:90%;
-    max-width:1100px;
-    margin:70px auto;
-}
-
-.tripleCrownHorses > h3{
-    color:#C9A227;
-    font-size:28px;
-    text-align:center;
-    margin-bottom:15px;
-    border-left:none;
-    padding-left:0;
-}
-
-.horseIntro{
-    font-size:17px;
-    line-height:1.9;
-    color:#555;
-    text-align:center;
-    margin-bottom:30px;
-}
-
-/* 3頭の歴代三冠馬をきれいに3列で並べるグリッド設定 */
-.horseGrid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:25px;
-    max-width:1000px;
-    margin:0 auto;
-}
-
-/* 三冠馬の個別カードデザイン */
-.horseCard{
-    background:#fff;
-    border-radius:15px;
-    overflow:hidden;
-    border:1px solid #e5e5e5;
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
-    transition:.3s;
-}
-
-/* 馬カードに触れたときに少し浮き上がらせる演出 */
-.horseCard:hover{
-    transform:translateY(-6px);
-    box-shadow:0 10px 20px rgba(0,0,0,.18);
-}
-
-.horseCard img{
-    width:100%;
-    height:160px;
-    object-fit:cover;
-}
-
-.horseCardText{
-    padding:15px;
-}
-
-.horseCardText h4{
-    text-align:center;
-    color:#344E68;
-    font-size:21px;
-    margin-bottom:3px;
-}
-
-.horseCardText span{
-    display:block;
-    text-align:center;
-    color:#888;
-    font-size:14px;
-    margin-bottom:10px;
-}
-
-.horseCardText p{
-    font-size:15px;
-    line-height:1.7;
-    color:#555;
-    margin:0;
-}
-
-/* 中画面（タブレット等）用：3列から2列に変える設定 */
-@media(max-width:1000px){
-
-    .horseGrid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-/* スマホ用：縦1列に潰して文字サイズを調整する設定 */
-@media(max-width:700px){
-
-    .classic{
-        width:90%;
-    }
-
-    .classic > h2{
-        font-size:30px;
-    }
-
-    .classicExplanation{
-        padding:25px 20px;
-    }
-
-    .classicExplanation > h3{
-        font-size:24px;
-    }
-
-    .classicText{
-        font-size:16px;
-    }
-
-    .horseGrid{
-        grid-template-columns:1fr;
-    }
-
-    .tripleCrownHorses > h3{
-        font-size:24px;
-    }
-
-    .horseCard img{
-        height:240px;
-    }
-}
-
-@media(max-width:700px){
-
-    .horseGrid{
-        grid-template-columns:1fr;
-        max-width:400px;
-    }
-
-    .horseCard img{
-        height:200px;
-    }
-
-}
-
-/*クラシック三冠レース*/
-.classicRaces{
-    width:90%;
-    max-width:1200px;
-    margin:70px auto;
-}
-
-.classicRaces > h3{
-    color:#2E8B57;
-    font-size:28px;
-    text-align:center;
-    margin-bottom:15px;
-    border-left:none;
-    padding-left:0;
-}
-
-.classicRacesIntro{
-    text-align:center;
-    font-size:17px;
-    line-height:1.9;
-    color:#555;
-    margin-bottom:35px;
-}
-
-/*牝馬三冠*/
-.femaleTripleIntro{
-    margin-top:80px;
-    margin-bottom:60px;
-}
-
-.femaleTripleHorses{
-    margin-bottom:70px;
-}
-
-.femaleTripleRaces{
-    width:90%;
-    max-width:1200px;
-    margin:70px auto;
-}
-
-.femaleTripleRaces > h3{
-    color:#2E8B57;
-    font-size:28px;
-    text-align:center;
-    margin-bottom:15px;
-}
-
-.classicRacesIntro{
-    font-size:17px;
-    line-height:1.9;
-    color:#555;
-    text-align:center;
-    margin-bottom:30px;
-}
-
-
-/* ==========================================
-   代表GⅠレース：選択メニュー（カード一覧）
-   ========================================== */
-.menu{
-    width:90%;
-    max-width:1200px;
-    margin:70px auto;
-}
-
-.menu h2{
-    text-align:center;
-    font-size:36px;
-    color:#2E8B57;
-    margin-bottom:40px;
-}
-
-/* 主要レースの選択カードを等間隔で綺麗に並べる設定 */
-.menuGrid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* カード全体がリンクボタンとして機能するようにする設定 */
-.raceMenu{
-    text-decoration:none;
-    color:inherit;
-    width: calc(33.333% - 20px);
-    min-width: 280px;
-}
-
-.menuCard{
-    background:#fff;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
-    transition:0.3s;
-    border:1px solid #e5e5e5;
-}
-
-.menuCard:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 25px rgba(0,0,0,.2);
-}
-
-.menuCard img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
-
-.menuCard h3{
-    text-align:center;
-    color:#344E68;
-    margin:15px 0 10px;
-    font-size:24px;
-}
-
-.menuCard p{
-    text-align:center;
-    color:#666;
-    line-height:1.7;
-    padding-bottom:20px;
-}
-
-/* カードの一番下に自動で「クリックして詳細を見る」の帯を差し込む設定 */
-.menuCard::after{
-    content:"クリックして詳細を見る";
-    display:block;
-    text-align:center;
-    background:#EEF2F5;
-    color:#344E68;
-    padding:12px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-/* カードに触れた時に下の帯の色を反転させる演出 */
-.menuCard:hover::after{
-    background:#344E68;
-    color:white;
-}
-
-
-/* ==========================================
-   各レース詳細ページ・個別カード
-   ========================================== */
-.card{
-    width:90%;
-    max-width:1000px;
-    margin:60px auto;
-    background:#fff;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
-    border:1px solid #e6e6e6;
-}
-
-/* 各レースタイトルの背景を綺麗なグラデーションにする設定 */
-.card h2{
-    width:100%;
-    margin:0;
-    padding:20px 0;
-    text-align:center;
-    font-size:32px;
-    color:#fff;
-
-    background:linear-gradient(to bottom,
-        #263B52 0%,
-        #49657F 55%,
-        #DCE5EC 100%);
-
-    border-radius:18px 18px 0 0;
-    box-shadow:none;
-    letter-spacing:2px;
-}
-
-.detailImage{
-    width:100%;
-    max-width:450px;
-    height:290px;
-    display:block;
-    margin:20px auto;
-    object-fit:cover;
-    border-radius:12px;
-}
-
-/* レース概要などの小見出しの左側に金色のアクセント線を引く */
-.card h3{
-    color:#2E8B57;
-    font-size:24px;
-    margin:30px 30px 15px;
-    border-left:5px solid #C9A227;
-    padding-left:12px;
-}
-
-.card p{
-    margin:0 30px 25px;
-    font-size:17px;
-    line-height:1.9;
-    color:#555;
-}
-
-.card ul{
-    margin:0 45px 30px;
-}
-
-.card li{
-    margin-bottom:12px;
-    font-size:17px;
-    line-height:1.8;
-}
-
-/* 「レースレコードを見る」ボタンのデザイン */
-.card button{
-    display:block;
-    margin:30px auto;
-    padding:14px 40px;
-    background:#344E68;
-    color:white;
-    border:none;
-    border-radius:30px;
-    font-size:17px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.card button:hover{
-    background:#C9A227;
-    transform:scale(1.05);
-}
-
-
-/* ==========================================
-   レースレコード（開閉コンテンツ・アコーディオン）
-   ========================================== */
-/* 最初は高さを0にして非表示にしておく設定 */
-.record{
-    max-height:0;
-    overflow:hidden;
-    opacity:0;
-    width:85%;
-    margin:0 auto;
-    padding:0 18px;
-    text-align:left;
-    background:#eef8ef;
-    border-left:none;
-    border-radius:10px;
-    color:#2E8B57;
-    transition:max-height .6s ease,opacity .5s ease,padding .5s ease,margin .5s ease;
-}
-
-/* ボタンが押された時、JavaScriptでこのクラスをつけて下にするっと広げる */
-.record.show{
-    max-height:800px;
-    opacity:1;
-    padding:25px;
-    margin:0 auto 35px;
-}
-
-/* レコード情報を左右（テキストと動画窓）に配置 */
-.recordBox{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:40px;
-}
-
-.recordText{
-    flex:0 0 40%;
-    text-align:center;
-}
-
-.recordText p{
-    margin:0 0 25px;
-    font-size:17px;
-    color:#555;
-}
-
-.recordText strong{
-    color:#2E8B57;
-    font-size:18px;
-}
-
-/* YouTubeなどの埋め込み動画エリア */
-.recordImage{
-    flex:0 0 55%;
-    text-align:center;
-}
-
-.recordImage iframe{
-    width:100%;
-    max-width:480px;
-    height:300px;
-    border:none;
-    border-radius:12px;
-}
-
-.imageCaption{
-    margin-top:10px;
-    font-size:14px;
-    color:#666;
-}
-
-/*  詳細カードのアニメーション */
-.card{
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 12px 25px rgba(0,0,0,.18);
-}
-
-/* 「一覧に戻る」ボタン */
-.backBtn{
-    display:table;
-    margin:40px auto 60px;
-    padding:12px 30px;
-    background:#2E8B57;
-    color:#fff;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.backBtn:hover{
-    background:#d4af37;
-    transform:translateY(-2px);
-}
-
-
-/* ==========================================
-   補助コンポーネント（ページトップ・スクロール演出）
+    補助コンポーネント（ページトップ・スクロール演出）
    ========================================== */
 /* 画面右下に常駐する「▲」ボタン（最初は消しておく） */
 #pageTopBtn {
@@ -896,13 +220,13 @@ nav a:hover{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #0b4622;
-    color: white;
+    background-color: var(--accent-color); 
+    color: #111;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     font-size: 18px;
-    transition: transform 0.3s opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
     z-index: 100;
     opacity: 0;
     pointer-events: none;
@@ -916,6 +240,7 @@ nav a:hover{
 
 #pageTopBtn:hover {
     transform: scale(1.1);
+    background-color: var(--main-color);
 }
 
 /* 下からふわっと浮き上がってくるスクロール演出用の初期状態 */
@@ -945,107 +270,41 @@ nav a:hover{
 .horseCard:nth-child(3){
     transition-delay:.8s;
 }
-   
+    
 /* 詳細ページの簡易ヘッダー */
 .subHeader {
-    background-color: #0b4622; 
+    background-color: #0a1710; 
     color: white;
     text-align: center;
     padding: 20px 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .subHeader h1 {
     font-size: 24px;
     letter-spacing: 1px;
-}
-
-/* 動画の比率を16:9に保ちつつスマホ画面に収める設定 */
-.recordImage iframe {
-    width: 100%;
-    max-width: 480px;
-    aspect-ratio: 16 / 9;
-    height: auto;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.card ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.card li {
-    margin-bottom: 12px;
-    font-size: 17px;
-    line-height: 1.8;
+    color: var(--main-color);
 }
 
 /* ==========================================
-   ホバーエフェクト（カードの動き）
-   ========================================== */
-
-/* レース紹介カードのホバー */
-.raceMenu {
-    display: block;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.raceMenu:hover {
-    transform: translateY(-7px);
-}
-
-.menuCard, .horseCard {
-    overflow: hidden; 
-}
-
-/* カード内の画像ホバー */
-.menuCard img, .horseCard img {
-    transition: transform 0.3s ease;
-}
-
-.raceMenu:hover .menuCard img,
-.horseCard:hover img {
-    transform: scale(1.06);
-}
-
-/* 三冠馬カードのホバー（浮き上がり） */
-.horseCard {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.horseCard:hover {
-    transform: translateY(-5px);
-}
-
-/* ==========================================
-   フッターエリア
+    フッターエリア
    ========================================== */
 footer {
-    background-color: #111;
-    color: #ccc;    
+    background-color: #050d08; 
+    color: #6a8274;    
     text-align: center;
     padding: 20px 10px;
     margin-top: 50px;
     font-size: 14px;
-}
-
-body {
-    cursor: url('img/cursor.png') 0 0, auto;
-}
-
-/* リンクやボタンの上に乗ったときは指マークにする */
-a, button, .raceMenu {
-    cursor: pointer;
+    border-top: 1px solid var(--border-color);
 }
 
 /* ==========================================
-   レコード達成時の電撃フラッシュ演出
+    レコード達成時の電撃フラッシュ演出
    ========================================== */
 .record-hit {
-    color: #e63946;
+    color: var(--main-color); 
     font-weight: bold;
     display: inline-block;
     position: relative;
@@ -1061,19 +320,19 @@ a, button, .raceMenu {
         filter: brightness(2);
         text-shadow: 
             0 0 5px #fff, 
-            0 0 10px #e63946, 
-            0 0 20px #e63946, 
-            0 0 40px #e63946;
+            0 0 10px var(--main-color), 
+            0 0 20px var(--main-color), 
+            0 0 40px var(--main-color);
     }
     20% {
-        color: #fff4f4;
+        color: #fffdec;
         text-shadow: 
-            0 0 10px #e63946, 
-            0 0 30px #e63946, 
-            0 0 60px #e63946;
+            0 0 10px var(--accent-color), 
+            0 0 30px var(--accent-color), 
+            0 0 60px var(--accent-color);
     }
     100% {
-        color: #e63946;
+        color: var(--main-color);
         text-shadow: none;
         filter: none;
     }
@@ -1086,7 +345,7 @@ a, button, .raceMenu {
 }
 
 /* ==========================================
-   背景の舞い落ちる演出エフェクト
+    背景の舞い落ちる演出エフェクト
    ========================================== */
 /* 画面全体でエフェクトが動くエリア */
 .petal-container {
@@ -1115,34 +374,34 @@ a, button, .raceMenu {
     height: 15px;
     background-color: #ffb7c5;
     border-radius: 150px 0 150px 150px;
-    opacity: 0.8;
+    opacity: 0.7; 
 }
 
 /* 2. 新緑の若葉（光の粒） */
 .season-green .petal {
     width: 10px;
     height: 14px;
-    background-color: #a7c957;
+    background-color: #bbf323; 
     border-radius: 100px 0 100px 0; 
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 /* 3. ゴールドのきらきら星 */
 .season-gold .petal {
     width: 12px;
     height: 12px;
-    background-color: #ffb703;
+    background-color: #ffe169; 
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); 
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 /* 4. もみじの落ち葉 */
 .season-autumn .petal {
     width: 15px;
     height: 15px;
-    background-color: #bc4749;
+    background-color: #e63946; 
     clip-path: polygon(50% 0%, 65% 20%, 85% 15%, 75% 40%, 100% 50%, 75% 60%, 85% 85%, 65% 80%, 50% 100%, 35% 80%, 15% 85%, 25% 60%, 0% 50%, 25% 40%, 15% 15%, 35% 20%);
-    opacity: 0.85;
+    opacity: 0.75;
 }
 
 /* ――― 舞い落ちるアニメーション ――― */
@@ -1158,7 +417,7 @@ a, button, .raceMenu {
 }
 
 /* ==========================================
-   スクロール連動：馬の足跡（蹄鉄画像）エフェクト
+    スクロール連動：馬の足跡（蹄鉄画像）エフェクト
    ========================================== */
 .hoofprint {
     position: fixed;
@@ -1184,11 +443,11 @@ a, button, .raceMenu {
         transform: scale(0.6) rotate(var(--hoof-rot));
     }
     15% {
-        opacity: 0.6;
+        opacity: 1; 
         transform: scale(1) rotate(var(--hoof-rot));
     }
     60% {
-        opacity: 0.7;
+        opacity: 0.8;
     }
     100% {
         opacity: 0;
@@ -1196,81 +455,46 @@ a, button, .raceMenu {
     }
 }
 
-/* ==========================================
-   スマートフォン・タブレット向け（レスポンシブ）
-   ========================================== */
-@media(max-width:768px){
-
-    /* レコード開閉部分をスマホでは縦並びにする */
-    .recordBox{
-        flex-direction:column;
-    }
-
-    .recordImage img{
-        max-width:100%;
-        height:220px;
-    }
-}
-
-@media(max-width:1000px){
-
-    .menuGrid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:700px){
-
-    .menuGrid{
-        grid-template-columns:1fr;
-    }
-}
-
 /* スマホでの見栄えを整えるための細かい文字サイズ・高さ調整 */
 @media(max-width:768px){
 
     .hero{
-    height:350px;
+        height:350px;
     }
 
     .heroText h1{
-    font-size:34px;
+        font-size:34px;
     }
 
     .heroText p{
-    font-size:18px;
+        font-size:18px;
     }
 
     .prev,
     .next{
-    width:45px;
-    height:45px;
-    font-size:24px;
+        width:45px;
+        height:45px;
+        font-size:24px;
     }
-
-    .card h2{
-        font-size:26px;
-    }
-
-    .detailImage{
-        height:220px;
-    }
-
-    .card h3{
-        font-size:22px;
-    }
-
-    .card p,
-    .card li{
-        font-size:16px;
-    }
-
 }
 
+/* ==========================================
+    アニメーション用キーフレーム定義
+   ========================================== */
+/* メイン画像を横に滑らせるための動く幅の定義 */
+@keyframes slide{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(-400vw);
+    }
+}
 
 /* ==========================================
-   アニメーション用キーフレーム定義
+    アニメーション用キーフレーム定義
    ========================================== */
 /* メイン画像を横に滑らせるための動く幅の定義 */
 @keyframes slide{
@@ -1283,4 +507,12 @@ a, button, .raceMenu {
         transform:translateX(-400vw);
     }
 
+}
+
+/* ==========================================
+    アクセシビリティ（フォーカス枠線の調整）
+   ========================================== */
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--main-color);
+    outline-offset: 3px;
 }

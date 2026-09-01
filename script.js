@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 /* ==========================================
    レコード（アコーディオン）の開閉処理 ＆ カウントアップ（色変化演出付き）
    ========================================== */
@@ -10,7 +11,10 @@ function toggleRecord(id, button){
 
     // 他のレコードとボタンをリセット
     records.forEach(record => {
-        if(record !== target) record.classList.remove('show');
+        if(record !== target) {
+            record.classList.remove('show');
+            record.style.maxHeight = null;
+        }
     });
     buttons.forEach(btn => {
         if(btn !== button) btn.textContent = 'レコードを見る';
@@ -19,9 +23,11 @@ function toggleRecord(id, button){
     // 開閉の切り替え
     if(target.classList.contains('show')){
         target.classList.remove('show');
+        target.style.maxHeight = null;
         button.textContent = 'レコードを見る';
     }else{
         target.classList.add('show');
+        target.style.maxHeight = target.scrollHeight + "px";
         button.textContent = '閉じる';
 
         // 開いた瞬間にカウントアップを開始
@@ -164,19 +170,30 @@ if (dots.length > 0) {
 }
 
 // 自動再生タイマーの管理
-let timer;
+let timer = null;
 function autoSlide() {
     changeSlide(current + 1);
 }
-if (hero) {
-    timer = setInterval(autoSlide, 3500);
-    changeSlide(0);
-}
-function resetTimer(){
-    if (hero) {
-        clearInterval(timer);
+
+function startTimer() {
+    if (hero && !timer) {
         timer = setInterval(autoSlide, 3500);
     }
+}
+
+function resetTimer(){
+    if (hero) {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+        startTimer();
+    }
+}
+
+if (hero) {
+    changeSlide(0);
+    startTimer();
 }
 
 /* ==========================================
@@ -221,14 +238,13 @@ window.dispatchEvent(new Event('scroll'));
 /* ==========================================
    背景に季節のアイテムを舞い上がらせる・降らせる処理
    ========================================== */
-window.addEventListener('DOMContentLoaded', () => {
-    const body = document.body;
-    
-    // 対象のクラスがどれか1つでもbodyにあれば実行
-    const seasons = ['season-sakura', 'season-green', 'season-gold', 'season-autumn'];
-    const hasSeason = seasons.some(className => body.classList.contains(className));
-    if (!hasSeason) return;
+const body = document.body;
 
+// 対象のクラスがどれか1つでもbodyにあれば実行
+const seasons = ['season-sakura', 'season-green', 'season-gold', 'season-autumn'];
+const hasSeason = seasons.some(className => body.classList.contains(className));
+
+if (hasSeason) {
     // 花びらを入れるコンテナ
     const container = document.createElement('div');
     container.className = 'petal-container';
@@ -254,18 +270,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
         container.appendChild(petal);
 
-        // 画面外に落ちたら自動で削除
-        setTimeout(() => {
-            petal.remove();
-        }, duration * 1000);
+        // アニメーション終了または安全タイマーで確実に削除
+        const removePetal = () => {
+            if (petal.parentNode) {
+                petal.remove();
+            }
+        };
+
+        petal.addEventListener('animationend', removePetal, { once: true });
+        setTimeout(removePetal, (duration + 0.5) * 1000);
 
     }, 300);
-});
+}
 
 /* ==========================================
    スクロール連動：馬の足跡（イベント完全解体版）
    ========================================== */
-let lastScrollTop = 0;
+let lastScrollTop = window.scrollY;
 let scrollDistance = 0;
 let isLeftFoot = true;
 
@@ -280,8 +301,8 @@ function handleHoofprintScroll() {
 
     scrollDistance += diff;
 
-    // 足跡が出る頻度
-    const stepFrequency = 450;
+    // 足跡が出る頻度（ピクセル移動量）
+    const stepFrequency = 480;
 
     if (scrollDistance > stepFrequency) {
         scrollDistance = 0;
@@ -289,12 +310,15 @@ function handleHoofprintScroll() {
         const hoof = document.createElement('div');
         hoof.className = 'hoofprint';
 
+        const randomRot = (Math.random() * 10 - 5);
+        const randomX = (Math.random() * 2);
+
         if (isLeftFoot) {
-            hoof.style.left = '4%'; 
-            hoof.style.setProperty('--hoof-rot', '-15deg');
+            hoof.style.left = (4 + randomX) + '%'; 
+            hoof.style.setProperty('--hoof-rot', (-15 + randomRot) + 'deg');
         } else {
-            hoof.style.right = '4%'; 
-            hoof.style.setProperty('--hoof-rot', '15deg');
+            hoof.style.right = (4 + randomX) + '%'; 
+            hoof.style.setProperty('--hoof-rot', (15 + randomRot) + 'deg');
         }
 
         const randomY = Math.random() * 40 + 40; 
@@ -336,3 +360,4 @@ document.addEventListener('mousedown', (e) => {
         }, 1200);
     }
 }, true);
+});
