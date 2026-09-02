@@ -1,58 +1,92 @@
-/* ===================================================
-   外部Webフォントの読み込み
-   =================================================== */
+@charset "UTF-8";
+
+/* ==========================================
+   1. 外部Webフォント・変数定義（CSS custom properties）
+   ========================================== */
+
+/* Google Fontsの読み込み（見出し・英字用フォント） */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Serif+JP:wght@400;600;700&family=Shippori+Mincho:wght@600;800&display=swap');
 
-/* ===================================================
-   カラーパレット設定：パターンA（JRAグリーン）
-   =================================================== */
 :root {
-    --bg-color: #0d1e14;       /* 画面全体の背景 */
-    --card-bg: rgba(20, 44, 30, 0.75); /* レースカードの背景（ガラス風透明度） */
-    --text-color: #ffffff;     /* 通常の文字 */
-    --sub-text: #d1d5db;        /* 説明文・補足テキスト */
-    --main-color: #ecd06f;     /* 見出し（ゴールド） */
-    --accent-color: #cca43b;   /* ボタンやアクセント */
-    --border-color: rgba(212, 175, 55, 0.2); /* 金色ベースの枠線 */
-    --gold-line: rgba(212, 175, 55, 0.35); /* 高級感を出す金色ライン */
+    --bg-color: #0d1e14;
+    --card-bg: rgba(20, 44, 30, 0.75);
+    --text-color: #ffffff;
+    --sub-text: #d1d5db;
+    --main-color: #ecd06f;
+    --accent-color: #cca43b;
+    --border-color: rgba(212, 175, 55, 0.2);
+    --gold-line: rgba(212, 175, 55, 0.35);
     --gold-gradient: linear-gradient(135deg, rgba(236, 208, 111, 0.4) 0%, rgba(204, 164, 59, 0.1) 50%, rgba(236, 208, 111, 0.4) 100%);
 }
 
+
 /* ==========================================
-   全体・共通・背景グラデーション＋質感テクスチャ
+   2. 全体設定・リセットCSS・基本タイポグラフィ
    ========================================== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    overflow-wrap: break-word;
+
+/* 全要素の余白を初期化し、ボックスサイズ計算を統一 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word; /* 長い単語やURLの枠外はみ出しを防止 */
 }
 
-html{
-    scroll-behavior:smooth;
+/* スムーススクロール（ページ内リンクへ滑らかに移動） */
+html {
+    scroll-behavior: smooth;
 }
 
-body{
+/* 基本となる背景グラデーション・フォント・行間の設定 */
+body {
     font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "ヒラギノ角ゴ Pro W3", "Meiryo", sans-serif;
     background-color: #050d08;
     background-image: 
         radial-gradient(circle at 50% 25%, rgba(26, 58, 38, 0.8) 0%, rgba(13, 30, 20, 0.95) 60%, rgba(4, 10, 6, 1) 100%),
         repeating-radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.012) 0, rgba(255, 255, 255, 0.012) 1px, transparent 2px, transparent 4px);
-    background-attachment: fixed;
+    background-attachment: fixed; /* スクリーン固定で奥行き感を演出 */
     background-size: 100% 100%, 6px 6px;
-    color:var(--text-color);
-    line-height:1.85;
-    letter-spacing: 0.05em;
-    -webkit-font-smoothing: antialiased;
+    color: var(--text-color);
+    line-height: 1.85; /* 文章の行間を広くして読みやすくする */
+    letter-spacing: 0.05em; /* 文字間隔の調整 */
+    -webkit-font-smoothing: antialiased; /* フォント描画をなめらかにする */
 }
 
+/* 明朝体フォントを適用する見出し要素 */
 h1, h2, h3, .section-title, .intro-card h3 {
     font-family: 'Shippori Mincho', 'Noto Serif JP', "Yu Mincho", "游明朝", serif;
     letter-spacing: 0.1em;
     font-weight: 700;
 }
 
-/* 2. 見出し（.section-title）ゴールド煌めき（確定解決版） */
+/* 数字・日付・距離表示用のフォント設定 */
+.num-text, .race-date, .race-distance {
+    font-family: 'Cinzel', 'Shippori Mincho', serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+/* 段落文章のテキストスタイル */
+p, .menuCard p {
+    letter-spacing: 0.04em;
+    line-height: 1.85;
+}
+
+/* 各セクションを区切るライングラデーション */
+.gold-divider {
+    height: 1px;
+    width: 100%;
+    max-width: 800px;
+    margin: 80px auto;
+    background: linear-gradient(90deg, transparent, rgba(236, 208, 111, 0.5), transparent);
+}
+
+
+/* ==========================================
+   3. セクションタイトル（アニメーション＆装飾）
+   ========================================== */
+
+/* 共通セクションタイトルのアニメーション文字設定 */
 .section-title,
 .gi-timeline-section .section-title {
     font-size: 2.2rem;
@@ -61,9 +95,9 @@ h1, h2, h3, .section-title, .intro-card h3 {
     margin-bottom: 50px;
     position: relative;
     padding-bottom: 24px;
-    display: block; /* 描画領域を明確化 */
+    display: block;
     
-    /* 金色の文字グラデーション */
+    /* 文字表面を流れるグラデーション背景 */
     background: linear-gradient(
         110deg,
         #cca43b 0%,
@@ -74,22 +108,22 @@ h1, h2, h3, .section-title, .intro-card h3 {
     ) !important;
     background-size: 200% auto !important;
     
-    /* テキスト切り抜きの強力な適用 */
+    /* 背景グラデーションでテキストをくり抜く処理 */
     background-clip: text !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     color: transparent !important;
     
-    animation: goldShine 6s linear infinite;
+    animation: goldShine 6s linear infinite; /* 光の反射アニメーションループ */
 }
 
+/* テキスト表面の光線移動アニメーション */
 @keyframes goldShine {
     0% { background-position: 200% center; }
     100% { background-position: -200% center; }
 }
 
-/* タイトル下線と中央のダイヤモンドモチーフ */
-/* タイトル下線（ライン） */
+/* タイトル下のグラデーション下線 */
 .section-title::after {
     content: '';
     position: absolute;
@@ -101,7 +135,7 @@ h1, h2, h3, .section-title, .intro-card h3 {
     background: linear-gradient(90deg, transparent, var(--main-color), transparent);
 }
 
-/* 中央のダイヤモンドモチーフ（黒い四角の背景を消し、透過処理に修正） */
+/* タイトル中央のダイヤモンドモチーフアイコン */
 .section-title::before {
     content: '◇';
     position: absolute;
@@ -110,49 +144,34 @@ h1, h2, h3, .section-title, .intro-card h3 {
     transform: translateX(-50%);
     font-size: 10px;
     color: var(--main-color);
-    background: transparent !important; /* 黒い四角の背景を完全に削除 */
-    -webkit-text-fill-color: var(--main-color) !important; /* ◇マークの色を正しく復活 */
+    background: transparent !important;
+    -webkit-text-fill-color: var(--main-color) !important;
     padding: 0 6px;
     z-index: 1;
 }
 
-.num-text, .race-date, .race-distance {
-    font-family: 'Cinzel', 'Shippori Mincho', serif;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-}
-
-p, .menuCard p {
-    letter-spacing: 0.04em;
-    line-height: 1.85;
-}
-
-.gold-divider {
-    height: 1px;
-    width: 100%;
-    max-width: 800px;
-    margin: 80px auto;
-    background: linear-gradient(90deg, transparent, rgba(236, 208, 111, 0.5), transparent);
-}
 
 /* ==========================================
-   メインビジュアル
+   4. メインビジュアル（ヒーローエリア・スライダー）
    ========================================== */
-.hero{
-    position:relative;
-    width:100%;
-    height:640px;
-    overflow:hidden;
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 640px;
+    overflow: hidden;
     margin-bottom: 0;
 }
 
+/* 横並びスライダーのコンテナ */
 .heroSlider {
     display: flex;
     width: 500%;
     height: 100%;
-    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* 滑らかなスライド移動 */
 }
 
+/* 各スライド画像の共通設定 */
 .slide {
     width: 100%;
     height: 100%;
@@ -162,9 +181,10 @@ p, .menuCard p {
     object-fit: cover;
 }
 
-.heroOverlay{
-    position:absolute;
-    inset:0;
+/* スライダー上の暗みグラデーション（テキストの可読性向上） */
+.heroOverlay {
+    position: absolute;
+    inset: 0;
     background: linear-gradient(
         180deg, 
         rgba(5, 13, 8, 0.55) 0%, 
@@ -176,22 +196,23 @@ p, .menuCard p {
     pointer-events: none;
 }
 
-.heroText{
-    position:absolute;
-    top:46%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:100%;
-    text-align:center;
-    color:white;
-    z-index:2;
+/* ヒーローエリア内のテキスト（タイトル・キャッチコピー） */
+.heroText {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 2;
     padding: 0 20px;
 }
 
-.heroText h1{
+.heroText h1 {
     font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-    font-size:58px;
-    margin-bottom:16px;
+    font-size: 58px;
+    margin-bottom: 16px;
     color: var(--main-color); 
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 30px rgba(236, 208, 111, 0.25);
     font-weight: 800;
@@ -199,39 +220,41 @@ p, .menuCard p {
     line-height: 1.2;
 }
 
-.heroText p{
-    font-size:22px;
-    letter-spacing:0.28em;
+.heroText p {
+    font-size: 22px;
+    letter-spacing: 0.28em;
     color: #e0e6e2;
     font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
     font-weight: 600;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
+/* スライダー左右切り替えボタン */
 .prev,
-.next{
-    position:absolute;
-    top:46%;
-    transform:translateY(-50%);
-    width:50px;
-    height:50px;
+.next {
+    position: absolute;
+    top: 46%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
     border: 1px solid rgba(212, 175, 55, 0.35);
-    border-radius:50%;
+    border-radius: 50%;
     background: rgba(8, 20, 14, 0.45);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: #fff;
-    font-size:22px;
-    cursor:pointer;
-    z-index:3;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 3;
     transition: all .35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.prev{ left:28px; }
-.next{ right:28px; }
+.prev { left: 28px; }
+.next { right: 28px; }
 
+/* 切り替えボタンのホバー表示 */
 .prev:hover,
-.next:hover{
+.next:hover {
     background: var(--accent-color); 
     color: #0d1e14; 
     border-color: var(--main-color);
@@ -239,67 +262,71 @@ p, .menuCard p {
     box-shadow: 0 0 20px rgba(204, 164, 59, 0.6);
 }
 
-.dots{
-    position:absolute;
-    bottom:40px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:14px;
-    z-index:3;
+/* スライダー位置を示すインジケータードット */
+.dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 14px;
+    z-index: 3;
 }
 
-.dot{
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:rgba(255,255,255,.3);
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .3);
     transition: all .3s ease;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.dot.active{
-    background:var(--main-color);
-    transform:scale(1.3);
+.dot.active {
+    background: var(--main-color);
+    transform: scale(1.3);
     box-shadow: 0 0 8px var(--main-color);
 }
 
+
 /* ==========================================
-   ナビゲーションメニュー
+   5. 追従ナビゲーションバー
    ========================================== */
-nav{
+
+nav {
     background: rgba(5, 13, 8, 0.88) !important;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px); /* すりガラス効果 */
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--gold-line);
     border-top: 1px solid rgba(212, 175, 55, 0.15);
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
-    position: sticky;
+    position: sticky; /* 画面上部に追従固定 */
     top: 0;
     z-index: 100;
 }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    justify-content:center;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
-nav li{ margin:0 15px; }
+nav li { margin: 0 15px; }
 
-nav a{
-    display:block;
-    padding:18px 12px;
-    text-decoration:none;
-    color:var(--text-color);
+nav a {
+    display: block;
+    padding: 18px 12px;
+    text-decoration: none;
+    color: var(--text-color);
     font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
     font-size: 1.05rem;
-    font-weight:600;
+    font-weight: 600;
     letter-spacing: 0.08em;
     position: relative;
     transition: color .3s ease, transform .3s ease;
 }
 
+/* メニュー項目のホバー用下線 */
 nav a::after {
     content: '';
     position: absolute;
@@ -312,16 +339,18 @@ nav a::after {
     transform: translateX(-50%);
 }
 
-nav a:hover{
-    color:var(--main-color); 
+nav a:hover {
+    color: var(--main-color); 
     text-shadow: 0 0 12px rgba(236, 208, 111, 0.4);
 }
 
-nav a:hover::after{ width: 85%; }
+nav a:hover::after { width: 85%; }
+
 
 /* ==========================================
-   3. ガラスモーフィズム & カード共通スタイル
+   6. カードコンポーネント（ガラスモーフィズム）
    ========================================== */
+
 .intro {
     display: flex;
     gap: 32px;
@@ -330,6 +359,7 @@ nav a:hover::after{ width: 85%; }
     padding: 0 24px;
 }
 
+/* すりガラス風カード（導入・メニュー・競走馬カード共通） */
 .intro-card,
 .menuCard,
 .horseCard {
@@ -340,7 +370,6 @@ nav a:hover::after{ width: 85%; }
     -webkit-backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
-    /* 3. 繊細な内側の白ハイライト＋外側のダブル枠線 */
     box-shadow: 
         inset 0 1px 1px rgba(255, 255, 255, 0.15),
         0 10px 30px rgba(0, 0, 0, 0.45);
@@ -354,7 +383,7 @@ nav a:hover::after{ width: 85%; }
     padding: 36px 32px;
 }
 
-/* シャイン光線アニメーション */
+/* ホバー時に光線がカード表面を通り過ぎるエフェクト */
 .intro-card::before,
 .menuCard::before {
     content: '';
@@ -382,7 +411,7 @@ nav a:hover::after{ width: 85%; }
     transition: left 0.75s ease-in-out;
 }
 
-/* 3. ホバー時の極上光沢・ゴールドオーラ */
+/* カードにマウスを乗せた時の浮き上がり・発光処理 */
 .intro-card:hover,
 .raceMenu:hover .menuCard,
 .menuCard:hover,
@@ -403,9 +432,11 @@ nav a:hover::after{ width: 85%; }
     margin-bottom: 22px;
 }
 
+
 /* ==========================================
-   レース一覧カード
+   7. レース・メニューグリッドレイアウト
    ========================================== */
+
 .raceContainer, .menuContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -428,20 +459,6 @@ nav a:hover::after{ width: 85%; }
     position: relative;
 }
 
-.menuCard img {
-    width: 100%;
-    height: 195px;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.5s ease;
-    filter: brightness(0.92);
-}
-
-.raceMenu:hover .menuCard img,
-.menuCard:hover img {
-    transform: scale(1.08);
-    filter: brightness(1.05);
-}
-
 .menuCard h3 {
     font-size: 1.25rem;
     color: #ffffff;
@@ -461,9 +478,94 @@ nav a:hover::after{ width: 85%; }
     line-height: 1.7;
 }
 
+/* レースカード画像の16:9比率固定・拡大アニメーション */
+.menuCard img,
+.race-card .card-image,
+.raceCard .card-image,
+.race-card figure,
+.raceCard figure,
+.race-card img,
+.raceCard img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 16 / 9 !important; /* 16:9表示に固定 */
+    object-fit: cover !important;
+    object-position: center !important;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.5s ease;
+    filter: brightness(0.92);
+}
+
+.raceMenu:hover .menuCard img,
+.menuCard:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.05);
+}
+
+
 /* ==========================================
-   補助コンポーネント・エフェクト
+   8. 三冠馬カード（スクロール演出アニメーション）
    ========================================== */
+
+/* 画面外にある時の初期状態（少し下に配置して透明） */
+.horseCard.scrollReveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1), 
+                transform 1.1s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* 画面内に入った時に表示位置へ復帰 */
+.horseCard.scrollReveal.show {
+    opacity: 1;
+    transform: translateY(0) !important;
+}
+
+/* 1頭目・2頭目・3頭目の時間差出現タイミング */
+.horseCard.scrollReveal.show:nth-of-type(1) { transition-delay: 0.15s !important; }
+.horseCard.scrollReveal.show:nth-of-type(2) { transition-delay: 0.4s !important; }
+.horseCard.scrollReveal.show:nth-of-type(3) { transition-delay: 0.65s !important; }
+
+/* アニメーション停止フラグ時（JavaScript等での設定用） */
+html.no-scroll-animation .scrollReveal {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+
+/* ==========================================
+   9. サブヘッダー・フッター・UIアクセサリ
+   ========================================== */
+
+.subHeader {
+    background: linear-gradient(180deg, #07130c 0%, #0d1e14 100%) !important;
+    color: white;
+    text-align: center;
+    padding: 32px 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    margin-bottom: 40px;
+}
+
+.subHeader h1 {
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: var(--main-color);
+}
+
+footer {
+    background: linear-gradient(180deg, #0a1710 0%, #030805 100%) !important;
+    color: #6a8274;    
+    text-align: center;
+    padding: 36px 16px;
+    margin-top: 80px;
+    font-size: 14px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* 「ページトップに戻る」ボタン */
 #pageTopBtn {
     position: fixed;
     bottom: 30px;
@@ -495,69 +597,18 @@ nav a:hover::after{ width: 85%; }
     box-shadow: 0 0 20px rgba(236, 208, 111, 0.6);
 }
 
-/* ==========================================
-   三冠馬・三冠牝馬カード専用：滑らかな順番表示
-   ========================================== */
-
-/* イージング（cubic-bezier）をよりヌルッと滑らかな質感に調整 */
-.horseCard.scrollReveal {
-    opacity: 0;
-    transform: translateY(35px);
-    transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1), 
-                transform 1.1s cubic-bezier(0.22, 1, 0.36, 1) !important;
+/* キーボード操作時のフォーカスリング枠線 */
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--main-color);
+    outline-offset: 3px;
 }
 
-/* 画面内に入ったら元の位置へ */
-.horseCard.scrollReveal.show {
-    opacity: 1;
-    transform: translateY(0) !important;
-}
-
-/* 1頭目：0.15秒後に滑らかに開始 */
-.horseCard.scrollReveal.show:nth-of-type(1) {
-    transition-delay: 0.15s !important;
-}
-
-/* 2頭目：0.4秒後に追従 */
-.horseCard.scrollReveal.show:nth-of-type(2) {
-    transition-delay: 0.4s !important;
-}
-
-/* 3頭目：0.65秒後に追従 */
-.horseCard.scrollReveal.show:nth-of-type(3) {
-    transition-delay: 0.65s !important;
-}
 
 /* ==========================================
-   スクロールアニメーション（カード崩れ防止・安全版）
+   10. 動的特殊エフェクト（レコード・花びら・蹄鉄・粒子）
    ========================================== */
 
-.subHeader {
-    background: linear-gradient(180deg, #07130c 0%, #0d1e14 100%) !important;
-    color: white;
-    text-align: center;
-    padding: 32px 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-    margin-bottom: 40px;
-}
-
-.subHeader h1 {
-    font-size: 26px;
-    letter-spacing: 2px;
-    color: var(--main-color);
-}
-
-footer {
-    background: linear-gradient(180deg, #0a1710 0%, #030805 100%) !important;
-    color: #6a8274;    
-    text-align: center;
-    padding: 36px 16px;
-    margin-top: 80px;
-    font-size: 14px;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-}
-
+/* 新記録更新時の強調演出 */
 .record-hit {
     color: var(--main-color); 
     font-weight: bold;
@@ -589,6 +640,7 @@ footer {
     100% { transform: scale(1); }
 }
 
+/* 舞い落ちる花びら・演出パーティクルの描画エリア */
 .petal-container {
     position: fixed;
     top: 0;
@@ -608,6 +660,7 @@ footer {
     animation: fall linear forwards;
 }
 
+/* 季節ごとの演出パーツ形状 */
 .season-sakura .petal { width: 15px; height: 15px; background-color: #ffb7c5; border-radius: 150px 0 150px 150px; opacity: 0.7; }
 .season-green .petal { width: 10px; height: 14px; background-color: #bbf323; border-radius: 100px 0 100px 0; opacity: 0.6; }
 .season-gold .petal { width: 12px; height: 12px; background-color: #ffe169; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); opacity: 0.8; }
@@ -618,7 +671,7 @@ footer {
     100% { top: 105vh; transform: translateX(var(--drift)) rotate(var(--rotation)); }
 }
 
-/* 4. 蹄鉄・粒子エフェクトのスタイリング強化 */
+/* 馬の足跡（蹄鉄）カーソルエフェクト */
 .hoofprint {
     position: fixed;
     width: 30px; 
@@ -634,6 +687,14 @@ footer {
     filter: drop-shadow(0 0 6px rgba(236, 208, 111, 0.6));
 }
 
+@keyframes hoofFade {
+    0% { opacity: 0; transform: scale(0.6) rotate(var(--hoof-rot)); }
+    15% { opacity: 1; transform: scale(1) rotate(var(--hoof-rot)); }
+    60% { opacity: 0.8; }
+    100% { opacity: 0; transform: scale(0.9) translateY(10px) rotate(var(--hoof-rot)); }
+}
+
+/* 蹄鉄の飛び散る光の粒子（パーティクル） */
 .hoof-particle {
     position: fixed;
     width: 4px;
@@ -651,60 +712,31 @@ footer {
     100% { opacity: 0; transform: scale(0) translate(var(--px), var(--py)); }
 }
 
-html.no-scroll-animation .scrollReveal {
-    transition: none !important;
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-}
 
-@keyframes hoofFade {
-    0% { opacity: 0; transform: scale(0.6) rotate(var(--hoof-rot)); }
-    15% { opacity: 1; transform: scale(1) rotate(var(--hoof-rot)); }
-    60% { opacity: 0.8; }
-    100% { opacity: 0; transform: scale(0.9) translateY(10px) rotate(var(--hoof-rot)); }
-}
+/* ==========================================
+   11. レスポンシブ表示設定（タブレット・スマホ）
+   ========================================== */
 
-/* レスポンシブ最適化 */
-@media(max-width:900px){
-    .intro{ flex-direction: column; margin: 50px auto; gap: 20px; }
+/* タブレット・小型画面向けレイアウト調整 */
+@media (max-width: 900px) {
+    .intro { flex-direction: column; margin: 50px auto; gap: 20px; }
     .gold-divider { margin: 50px auto; }
     .raceContainer, .menuContainer { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 60px; }
 }
 
-@media(max-width:768px){
-    .hero{ height: 420px; }
-    .heroText h1{ font-size: 34px; letter-spacing: 0.1em; margin-bottom: 8px; }
-    .heroText p{ font-size: 15px; letter-spacing: 0.15em; }
-    .prev, .next{ width: 42px; height: 42px; font-size: 18px; }
-    .prev{ left: 10px; }
-    .next{ right: 10px; }
-    .dots{ bottom: 25px; }
-    nav ul{ flex-wrap: wrap; padding: 4px 0; }
+/* スマートフォン表示最適化 */
+@media (max-width: 768px) {
+    .hero { height: 420px; }
+    .heroText h1 { font-size: 34px; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .heroText p { font-size: 15px; letter-spacing: 0.15em; }
+    .prev, .next { width: 42px; height: 42px; font-size: 18px; }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .dots { bottom: 25px; }
+    nav ul { flex-wrap: wrap; padding: 4px 0; }
     nav li { margin: 0 4px; }
     nav a { padding: 12px 10px; font-size: 0.88rem; }
     .section-title { font-size: 1.75rem; margin-bottom: 35px; }
     .intro-card { padding: 24px 20px; }
     #pageTopBtn { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 16px; }
-}
-
-a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--main-color);
-    outline-offset: 3px;
-}
-
-/* レース紹介カードの画像と親枠を16:9に強制統一（menuCardの固定高さを上書き） */
-.menuCard img,
-.race-card .card-image,
-.raceCard .card-image,
-.race-card figure,
-.raceCard figure,
-.race-card img,
-.raceCard img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    aspect-ratio: 450 / 253 !important;
-    object-fit: cover !important;
-    object-position: center !important;
 }

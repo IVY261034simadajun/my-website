@@ -1,416 +1,429 @@
+@charset "UTF-8";
+
 /* ==========================================
-    01. イントロダクション（GⅠとは）
+   01. イントロダクション（GⅠとは）
    ========================================== */
 .intro {
-    width: 90%;
-    max-width: 1100px;
-    margin: 60px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  width: 90%;
+  max-width: 1100px;
+  margin: 60px auto;
 }
 
+/* 概要テキスト領域 */
 .introText {
-    flex: 1;
+  flex: 1;
 }
 
+/* 見出し：アクセントカラーの左ボーダー付き */
 .introText h2 {
-    color: var(--main-color); 
-    font-size: 34px;
-    margin-bottom: 20px;
-    border-left: 6px solid var(--accent-color); 
-    padding-left: 15px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: 6px solid var(--accent-color);
+  color: var(--main-color);
+  font-size: 34px;
 }
 
 .introText p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
+/* 概要画像領域 */
 .introImage {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 
 .introImage img {
-    width: 100%;
-    max-width: 380px;
-    border-radius: 15px;
-    box-shadow: 0 5px 18px rgba(0,0,0,.5);
+  width: 100%;
+  max-width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.5);
 }
 
 
 /* ==========================================
-    02. 競馬の基礎知識（馬場・距離の違い）
+   02. 競馬の基礎知識（馬場・距離の違い）
    ========================================== */
 .knowledgeSection {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
+/* セクション共通ヘッダー（中央揃え） */
 .sectionTitleContainer {
-    text-align: center;
-    margin-bottom: 40px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .sectionTitleContainer h2 {
-    font-size: 26px;
-    color: var(--main-color); 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+  color: var(--main-color);
+  font-size: 26px;
 }
 
+/* 2列並びのカードグリッド */
 .knowledgeGrid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
+/* カード共通スタイル */
 .knowledgeCard {
-    background: var(--card-bg); 
-    border-radius: 12px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
-    border: 1px solid var(--border-color);
-    padding: 30px;
-    width: calc(50% - 15px);
-    min-width: 320px;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  width: calc(50% - 15px);
+  min-width: 320px;
+  padding: 30px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
 
 .knowledgeCard h3 {
-    font-size: 20px;
-    color: var(--main-color); 
-    border-bottom: 2px solid var(--accent-color); 
-    padding-bottom: 10px;
-    margin-top: 0;
-    margin-bottom: 15px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent-color);
+  color: var(--main-color);
+  font-size: 20px;
 }
 
 .knowledgeIntro {
-    color: #e0e0e0;
-    font-size: 15px;
-    line-height: 1.6;
+  color: #e0e0e0;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
+/* 比較用テーブルパーツ */
 .knowledgeTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 15px;
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 15px;
 }
 
-.knowledgeTable th, .knowledgeTable td {
-    border: 1px solid var(--border-color); 
-    padding: 12px;
-    text-align: left;
+.knowledgeTable th,
+.knowledgeTable td {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  text-align: left;
 }
 
 .knowledgeTable th {
-    background-color: #0a1710; 
-    color: var(--main-color);
-    width: 30%;
+  width: 30%;
+  background-color: #0a1710;
+  color: var(--main-color);
 }
 
 .knowledgeTable td {
-    color: #e0e0e0;
+  color: #e0e0e0;
 }
 
+/* 馬場解説用の補足ハイライトボックス */
 .baba-info-box {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
 }
 
 .baba-info-box h4 {
-    margin: 0 0 8px 0;
-    font-size: 0.95rem;
-    color: #f39c12;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px;
+  color: #f39c12;
+  font-size: 0.95rem;
 }
 
 .baba-desc {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    margin-bottom: 10px;
-    color: #e0e0e0;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 .baba-list {
-    margin: 0;
-    padding-left: 18px;
-    font-size: 0.83rem;
-    line-height: 1.5;
-    color: #cccccc;
+  margin: 0;
+  padding-left: 18px;
+  color: #ccc;
+  font-size: 0.83rem;
+  line-height: 1.5;
 }
 
 .baba-list li {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 .baba-list li:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .baba-list strong {
-    color: #ffffff;
+  color: #fff;
 }
 
 .baba-list b {
-    color: #f1c40f;
+  color: #f1c40f;
 }
 
+/* 注釈・ポイントテキスト枠 */
 .knowledgeDesc {
-    font-size: 14px;
-    color: #e5e5e5;
-    line-height: 1.7;
-    background: #0a1710; 
-    padding: 15px;
-    border-left: 4px solid var(--accent-color); 
-    border-radius: 0 8px 8px 0;
+  padding: 15px;
+  background: #0a1710;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 0 8px 8px 0;
+  color: #e5e5e5;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
+/* 距離区分用リスト（破線区切り付き） */
 .distanceList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .distanceList li {
-    margin-bottom: 18px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed var(--border-color);
+  margin-bottom: 18px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed var(--border-color);
 }
 
 .distanceList li:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .distanceList strong {
-    display: block;
-    font-size: 16px;
-    color: var(--main-color); 
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
+  color: var(--main-color);
+  font-size: 16px;
 }
 
 .distanceList span {
-    font-size: 14px;
-    color: #ccc;
-    line-height: 1.6;
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 
 /* ==========================================
-    03. クラシック三冠・牝馬三冠セクション
+   03. クラシック三冠・牝馬三冠セクション
    ========================================== */
 .classic {
-    width: 90%;
-    max-width: 1200px;
-    margin: 70px auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 70px auto;
 }
 
 .classic > h2 {
-    text-align: center;
-    font-size: 36px;
-    color: var(--main-color); 
-    margin-bottom: 40px;
+  margin-bottom: 40px;
+  color: var(--main-color);
+  font-size: 36px;
+  text-align: center;
 }
 
+/* 三冠の概念説明エリア */
 .classicExplanation {
-    width: 90%;
-    max-width: 1100px;
-    margin: 60px auto;
+  width: 90%;
+  max-width: 1100px;
+  margin: 60px auto;
 }
 
 .classicExplanation h3 {
-    color: var(--main-color);
-    font-size: 34px;
-    margin-bottom: 20px;
-    border-left: 6px solid var(--accent-color); 
-    padding-left: 15px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: 6px solid var(--accent-color);
+  color: var(--main-color);
+  font-size: 34px;
 }
 
 .classicExplanation p,
 .classicText {
-    font-size: 17px;
-    line-height: 1.9;
-    color: #e0e0e0;
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+  font-size: 17px;
+  line-height: 1.9;
 }
 
 .classicText strong {
-    color: var(--main-color); 
+  color: var(--main-color);
 }
 
+/* 三冠馬紹介エリア */
 .tripleCrownHorses {
-    width: 90%;
-    max-width: 1100px;
-    margin: 70px auto;
+  width: 90%;
+  max-width: 1100px;
+  margin: 70px auto;
 }
 
 .tripleCrownHorses > h3,
 .classicRaces > h3,
 .femaleTripleRaces > h3 {
-    color: var(--main-color); 
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 15px;
-    border-left: none;
-    padding-left: 0;
+  margin-bottom: 15px;
+  padding-left: 0;
+  border-left: none;
+  color: var(--main-color);
+  font-size: 28px;
+  text-align: center;
 }
 
 .horseIntro,
 .classicRacesIntro {
-    font-size: 17px;
-    line-height: 1.9;
-    color: #ccc;
-    text-align: center;
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+  color: #ccc;
+  font-size: 17px;
+  line-height: 1.9;
+  text-align: center;
 }
 
+/* 馬カードの3列CSS Grid */
 .horseGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 1000px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
+/* 馬カード：マウスホバーで浮き上がる効果 */
 .horseCard {
-    background: var(--card-bg); 
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .horseCard:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,.6);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
+/* 馬画像：ホバーで緩やかに拡大（ズームイン） */
 .horseCard img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .horseCard:hover img {
-    transform: scale(1.06);
+  transform: scale(1.06);
 }
 
 .horseCardText {
-    padding: 15px;
+  padding: 15px;
 }
 
 .horseCardText h4 {
-    text-align: center;
-    color: var(--main-color);
-    font-size: 21px;
-    margin-bottom: 3px;
+  margin-bottom: 3px;
+  color: var(--main-color);
+  font-size: 21px;
+  text-align: center;
 }
 
 .horseCardText span {
-    display: block;
-    text-align: center;
-    color: #aaa;
-    font-size: 14px;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
+  color: #aaa;
+  font-size: 14px;
+  text-align: center;
 }
 
 .horseCardText p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #e0e0e0;
-    margin: 0;
+  margin: 0;
+  color: #e0e0e0;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
+/* クラシック・牝馬三冠のレース一覧 */
 .classicRaces,
 .femaleTripleRaces {
-    width: 90%;
-    max-width: 1200px;
-    margin: 70px auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 70px auto;
 }
 
 .femaleTripleIntro {
-    margin-top: 80px;
-    margin-bottom: 60px;
+  margin-top: 80px;
+  margin-bottom: 60px;
 }
 
 .femaleTripleHorses {
-    margin-bottom: 70px;
+  margin-bottom: 70px;
 }
 
 
 /* ==========================================
-    04. 年間GⅠスケジュール（6ステップ）
+   04. 年間GⅠスケジュール（6ステップ）
    ========================================== */
 .gi-timeline-section {
-    margin: 80px auto 40px;
-    max-width: 1100px;
-    padding: 0 20px;
+  max-width: 1100px;
+  margin: 80px auto 40px;
+  padding: 0 20px;
 }
 
-/* タイトル部分の最終修正コード */
+/* グラデーションテキスト処理（ゴールド系） */
 .gi-timeline-section .section-title {
-    text-align: center;
-    font-size: 1.6rem;
-    margin-bottom: 8px;
-    
-    /* 1. 見出し全体の余計な背景を完全に透明化（黒い四角を消す） */
-    background: transparent !important;
-    background-image: none !important;
-    
-    /* 2. インラインブロック化してテキスト領域だけを対象にする */
-    display: inline-block;
-    width: 100%;
-    
-    /* 3. 文字グラデーションと切り抜き */
-    background: linear-gradient(135deg, #d4af37 0%, #fff8db 50%, #aa7c11 100%) !important;
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    color: transparent !important;
-    -webkit-text-fill-color: transparent !important;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #d4af37 0%, #fff8db 50%, #aa7c11 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 .gi-timeline-section .section-subtitle {
-    text-align: center;
-    color: #a0a0a0;
-    font-size: 0.9rem;
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
+/* タイムラインカードの3列Grid */
 .timeline-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .timeline-card {
-    background: rgba(10, 25, 18, 0.7);
-    border-radius: 10px;
-    padding: 20px;
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(10, 25, 18, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .timeline-card:hover {
-    border-color: rgba(212, 175, 55, 0.6);
-    transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.6);
+  transform: translateY(-4px);
 }
 
+/* 各ステップごとに左端のボーダー色を変更 */
 .timeline-card.step-1 { border-left: 4px solid #f48fb1; }
 .timeline-card.step-2 { border-left: 4px solid #ce93d8; }
 .timeline-card.step-3 { border-left: 4px solid #81c784; }
@@ -418,486 +431,513 @@
 .timeline-card.step-5 { border-left: 4px solid #ff7043; }
 .timeline-card.step-6 { border-left: 4px solid #d4af37; }
 
+/* 季節・時期バッジ */
 .season-badge {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: bold;
-    padding: 3px 10px;
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 4px;
-    color: #f39c12;
-    margin-bottom: 8px;
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 3px 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  color: #f39c12;
+  font-size: 0.78rem;
+  font-weight: bold;
 }
 
 .timeline-card h4 {
-    margin: 0 0 10px 0;
-    font-size: 1.05rem;
-    color: #ffffff;
-    line-height: 1.35;
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.35;
 }
 
 .timeline-summary {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: #c5d0c8;
-    margin-bottom: 14px;
+  margin-bottom: 14px;
+  color: #c5d0c8;
+  font-size: 0.85rem;
+  line-height: 1.6;
 }
 
+/* 主なレースのバッジ枠 */
 .timeline-races {
-    font-size: 0.78rem;
-    color: #d0dad3;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 8px 12px;
-    border-radius: 6px;
-    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #d0dad3;
+  font-size: 0.78rem;
 }
 
 .timeline-races span {
-    color: #f39c12;
-    font-weight: bold;
-    margin-right: 4px;
+  margin-right: 4px;
+  color: #f39c12;
+  font-weight: bold;
 }
 
 
 /* ==========================================
-    05. 代表GⅠレース：選択メニュー（カード一覧）
+   05. 代表GⅠレース：選択メニュー（カード一覧）
    ========================================== */
 .menu {
-    width: 90%;
-    max-width: 1200px;
-    margin: 70px auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 70px auto;
 }
 
 .menu h2 {
-    text-align: center;
-    font-size: 36px;
-    color: var(--main-color); 
-    margin-bottom: 40px;
+  margin-bottom: 40px;
+  color: var(--main-color);
+  font-size: 36px;
+  text-align: center;
 }
 
 .menuGrid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* リンクカード全体を包むaタグ */
 .raceMenu {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    width: calc(33.333% - 20px);
-    min-width: 280px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  width: calc(33.333% - 20px);
+  min-width: 280px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .raceMenu:hover {
-    transform: translateY(-7px);
+  transform: translateY(-7px);
 }
 
 .menuCard {
-    background: var(--card-bg); 
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,.4);
-    transition: 0.3s;
-    border: 1px solid var(--border-color);
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
 }
 
 .menuCard:hover {
-    box-shadow: 0 12px 30px rgba(0,0,0,.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 .menuCard img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .raceMenu:hover .menuCard img {
-    transform: scale(1.06);
+  transform: scale(1.06);
 }
 
 .menuCard h3 {
-    text-align: center;
-    color: var(--main-color);
-    margin: 15px 0 10px;
-    font-size: 24px;
+  margin: 15px 0 10px;
+  color: var(--main-color);
+  font-size: 24px;
+  text-align: center;
 }
 
 .menuCard p {
-    text-align: center;
-    color: #e0e0e0;
-    line-height: 1.7;
-    padding-bottom: 20px;
+  padding-bottom: 20px;
+  color: #e0e0e0;
+  line-height: 1.7;
+  text-align: center;
 }
 
+/* ホバー時に色が変わる「クリックして詳細を見る」ラベル */
 .menuCard::after {
-    content: "クリックして詳細を見る";
-    display: block;
-    text-align: center;
-    background: #0a1710; 
-    color: var(--main-color); 
-    padding: 12px;
-    font-weight: bold;
-    transition: .3s;
-    border-top: 1px solid var(--border-color);
+  content: "クリックして詳細を見る";
+  display: block;
+  padding: 12px;
+  background: #0a1710;
+  border-top: 1px solid var(--border-color);
+  color: var(--main-color);
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
 }
 
 .menuCard:hover::after {
-    background: var(--accent-color); 
-    color: #111; 
+  background: var(--accent-color);
+  color: #111;
 }
 
 
 /* ==========================================
-    06. 各レース詳細ページ・個別カード & アコーディオン
+   06. 各レース詳細ページ・個別カード & アコーディオン
    ========================================== */
 .card {
-    width: 90%;
-    max-width: 1000px;
-    margin: 60px auto;
-    background: #0b2d18; 
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,.5);
-    border: 1px solid var(--border-color);
-    color: #ffffff;
-    transition: .3s;
+  overflow: hidden;
+  width: 90%;
+  max-width: 1000px;
+  margin: 60px auto;
+  background: #0b2d18;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 25px rgba(0,0,0,.5);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
 }
 
+/* 重厚感のあるグラデーションヘッダー */
 .card h2 {
-    width: 100%;
-    margin: 0;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 32px;
-    color: var(--main-color); 
-    background: linear-gradient(to bottom, #1b3b29 0%, #0d1e14 55%, #050d08 100%); 
-    border-radius: 18px 18px 0 0;
-    letter-spacing: 2px;
-    border-bottom: 2px solid var(--accent-color); 
+  width: 100%;
+  margin: 0;
+  padding: 20px 0;
+  background: linear-gradient(to bottom, #1b3b29 0%, #0d1e14 55%, #050d08 100%);
+  border-bottom: 2px solid var(--accent-color);
+  border-radius: 18px 18px 0 0;
+  color: var(--main-color);
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-align: center;
 }
 
 .detailImage {
-    width: 100%;
-    max-width: 450px;
-    height: 290px;
-    display: block;
-    margin: 20px auto;
-    object-fit: cover;
-    border-radius: 12px;
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  height: 290px;
+  margin: 20px auto;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .card h3 {
-    color: var(--main-color);
-    font-size: 24px;
-    margin: 30px 30px 15px;
-    border-left: 5px solid var(--accent-color); 
-    padding-left: 12px;
+  margin: 30px 30px 15px;
+  padding-left: 12px;
+  border-left: 5px solid var(--accent-color);
+  color: var(--main-color);
+  font-size: 24px;
 }
 
 .card p {
-    margin: 0 30px 25px;
-    font-size: 17px;
-    line-height: 1.9;
-    color: #e0e0e0;
+  margin: 0 30px 25px;
+  color: #e0e0e0;
+  font-size: 17px;
+  line-height: 1.9;
 }
 
 .card ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0 45px 30px;
+  margin: 0 45px 30px;
+  padding-left: 0;
+  list-style: none;
 }
 
 .card li {
-    margin-bottom: 12px;
-    font-size: 17px;
-    line-height: 1.8;
-    color: #e0e0e0;
+  margin-bottom: 12px;
+  color: #e0e0e0;
+  font-size: 17px;
+  line-height: 1.8;
 }
 
+/* アコーディオン開閉用の操作ボタン */
 .card button {
-    display: block;
-    margin: 30px auto;
-    padding: 14px 40px;
-    background: var(--accent-color); 
-    color: #111; 
-    border: none;
-    border-radius: 30px;
-    font-size: 17px;
-    cursor: pointer;
-    transition: .3s;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: block;
+  margin: 30px auto;
+  padding: 14px 40px;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: #111;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .card button:hover {
-    background: var(--main-color); 
-    transform: scale(1.05);
+  background: var(--main-color);
+  transform: scale(1.05);
 }
 
-/* アコーディオン開閉部 */
+/* アコーディオン表示部（初期状態は max-height: 0 で非表示） */
 .record {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    width: 85%;
-    margin: 0 auto;
-    padding: 0 18px;
-    text-align: left;
-    background: #0a1710; 
-    border-radius: 10px;
-    color: var(--text-color);
-    transition: max-height .6s ease, opacity .5s ease, padding .5s ease, margin .5s ease;
-    border: 1px solid var(--border-color);
+  overflow: hidden;
+  width: 85%;
+  max-height: 0;
+  margin: 0 auto;
+  padding: 0 18px;
+  background: #0a1710;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  opacity: 0;
+  text-align: left;
+  transition: max-height 0.6s ease, opacity 0.5s ease, padding 0.5s ease, margin 0.5s ease;
 }
 
+/* JavaScriptで .show クラスが付与された際に滑らかに開く */
 .record.show {
-    max-height: 800px;
-    opacity: 1;
-    padding: 25px;
-    margin: 0 auto 35px;
+  max-height: 800px;
+  margin: 0 auto 35px;
+  padding: 25px;
+  opacity: 1;
 }
 
 .recordBox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
 }
 
 .recordText {
-    flex: 0 0 40%;
-    text-align: center;
+  flex: 0 0 40%;
+  text-align: center;
 }
 
 .recordText p {
-    margin: 0 0 25px;
-    font-size: 17px;
-    color: #e0e0e0;
+  margin: 0 0 25px;
+  color: #e0e0e0;
+  font-size: 17px;
 }
 
 .recordText strong {
-    color: var(--main-color); 
-    font-size: 18px;
+  color: var(--main-color);
+  font-size: 18px;
 }
 
+/* 動画埋め込み（iframe）領域 */
 .recordImage {
-    flex: 0 0 55%;
-    text-align: center;
+  flex: 0 0 55%;
+  text-align: center;
 }
 
 .recordImage iframe {
-    width: 100%;
-    max-width: 480px;
-    aspect-ratio: 16 / 9;
-    height: auto;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .imageCaption {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #aaa;
+  margin-top: 10px;
+  color: #aaa;
+  font-size: 14px;
 }
 
+/* 「戻る」ボタンパーツ */
 .backBtn {
-    display: table;
-    margin: 40px auto 60px;
-    padding: 12px 30px;
-    background: #0b2d18; 
-    color: var(--main-color); 
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: .3s;
-    border: 1px solid var(--border-color);
+  display: table;
+  margin: 40px auto 60px;
+  padding: 12px 30px;
+  background: #0b2d18;
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  color: var(--main-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .backBtn:hover {
-    background: var(--accent-color); 
-    color: #111;
-    border-color: var(--accent-color);
-    transform: translateY(-2px);
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #111;
+  transform: translateY(-2px);
 }
 
 
 /* ==========================================
-    07. 締めの一言（クロージングメッセージ）
+   07. 締めの一言（クロージングメッセージ）
    ========================================== */
 .closing-message-section {
-    margin: 60px auto 80px;
-    max-width: 1000px;
-    padding: 0 20px;
+  max-width: 1000px;
+  margin: 60px auto 80px;
+  padding: 0 20px;
 }
 
 .closing-inner {
-    text-align: center;
-    background: radial-gradient(circle, rgba(20, 45, 33, 0.8) 0%, rgba(8, 20, 14, 0.95) 100%);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 12px;
-    padding: 48px 30px;
-    position: relative;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  position: relative;
+  padding: 48px 30px;
+  background: radial-gradient(circle, rgba(20, 45, 33, 0.8) 0%, rgba(8, 20, 14, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
 
+/* 引用マークアイコン */
 .closing-quote-icon {
-    font-size: 3rem;
-    line-height: 1;
-    color: rgba(243, 156, 18, 0.4);
-    font-family: Georgia, serif;
-    display: block;
-    margin-bottom: -10px;
+  display: block;
+  margin-bottom: -10px;
+  color: rgba(243, 156, 18, 0.4);
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .closing-inner h3 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 16px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 16px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .closing-inner p {
-    font-size: 0.95rem;
-    line-height: 1.9;
-    color: #d0dad3;
-    margin-bottom: 24px;
+  margin-bottom: 24px;
+  color: #d0dad3;
+  font-size: 0.95rem;
+  line-height: 1.9;
 }
 
 .closing-subtext {
-    font-size: 0.85rem;
-    color: #f39c12;
-    letter-spacing: 0.2em;
+  color: #f39c12;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
 }
 
 
 /* ==========================================
-    08. レスポンシブ対応（画面幅別）
+   08. レスポンシブ対応（画面幅別）
    ========================================== */
 
-/* タブレット・中画面向け（横幅 1000px 以下） */
+/* タブレット・中画面向け（1000px 以下）：グリッドを3列から2列へ変更 */
 @media (max-width: 1000px) {
-    .horseGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .menuGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .horseGrid,
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* タブレット・小画面向け（横幅 900px 以下） */
+/* タブレット・小画面向け（900px 以下）：タイムラインとメニューの横幅調整 */
 @media (max-width: 900px) {
-    .timeline-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .raceMenu {
-        width: calc(50% - 15px);
-    }
+  .timeline-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .raceMenu {
+    width: calc(50% - 15px);
+  }
 }
 
-/* タブレット・スマホ全般（横幅 768px 以下） */
+/* タブレット・スマホ全般（768px 以下）：カードの縦並び化とフォント縮小 */
 @media (max-width: 768px) {
-    .knowledgeCard {
-        width: 100%;
-    }
-    .recordBox {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .recordImage img,
-    .recordImage iframe {
-        max-width: 100%;
-        height: 180px;
-    }
-    .card {
-        margin: 10px auto;
-        padding: 16px;
-    }
-    .card h2 {
-        font-size: 26px;
-    }
-    .detailImage {
-        height: 220px;
-    }
-    .card h3 {
-        font-size: 22px;
-    }
-    .card p,
-    .card li {
-        font-size: 16px;
-    }
+  .knowledgeCard {
+    width: 100%;
+  }
+
+  .card {
+    margin: 10px auto;
+    padding: 16px;
+  }
+
+  .card h2 {
+    font-size: 26px;
+  }
+
+  .card h3 {
+    font-size: 22px;
+  }
+
+  .card p,
+  .card li {
+    font-size: 16px;
+  }
+
+  .detailImage {
+    height: 220px;
+  }
+
+  .recordBox {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .recordImage img,
+  .recordImage iframe {
+    max-width: 100%;
+    height: 180px;
+  }
 }
 
-/* スマホ向け（横幅 700px 以下） */
+/* スマホ向け（700px 以下）：グリッドの1列化・余白の最適化 */
 @media (max-width: 700px) {
-    .classic {
-        width: 90%;
-    }
-    .classic > h2 {
-        font-size: 30px;
-    }
-    .classicExplanation {
-        padding: 25px 20px;
-    }
-    .classicExplanation > h3 {
-        font-size: 24px;
-    }
-    .classicText {
-        font-size: 16px;
-    }
-    .tripleCrownHorses > h3 {
-        font-size: 24px;
-    }
-    .horseGrid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-    }
-    .horseCard img {
-        height: 200px;
-    }
-    .menuGrid {
-        grid-template-columns: 1fr;
-    }
+  .classic {
+    width: 90%;
+  }
+
+  .classic > h2 {
+    font-size: 30px;
+  }
+
+  .classicExplanation {
+    padding: 25px 20px;
+  }
+
+  .classicExplanation > h3,
+  .tripleCrownHorses > h3 {
+    font-size: 24px;
+  }
+
+  .classicText {
+    font-size: 16px;
+  }
+
+  .horseGrid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .horseCard img {
+    height: 200px;
+  }
+
+  .menuGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* スマホ小画面向け（横幅 600px 以下） */
+/* スマホ小画面向け（600px 以下）：タイムライン・ボタンの1列フルサイズ表示 */
 @media (max-width: 600px) {
-    .timeline-container {
-        grid-template-columns: 1fr;
-    }
-    .raceMenu {
-        width: 100%;
-    }
-    .gi-timeline-section {
-        margin: 50px auto 30px;
-    }
-    .closing-inner {
-        padding: 30px 18px;
-    }
-    .closing-inner h3 {
-        font-size: 1.25rem;
-    }
-    .closing-inner p {
-        font-size: 0.88rem;
-    }
-    .backBtn {
-        display: block;
-        text-align: center;
-        margin: 20px auto;
-        padding: 12px;
-    }
+  .gi-timeline-section {
+    margin: 50px auto 30px;
+  }
+
+  .timeline-container {
+    grid-template-columns: 1fr;
+  }
+
+  .raceMenu {
+    width: 100%;
+  }
+
+  .closing-inner {
+    padding: 30px 18px;
+  }
+
+  .closing-inner h3 {
+    font-size: 1.25rem;
+  }
+
+  .closing-inner p {
+    font-size: 0.88rem;
+  }
+
+  .backBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px;
+    text-align: center;
+  }
 }
